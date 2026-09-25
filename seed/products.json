@@ -1,0 +1,1206 @@
+[
+  {
+    "id": "ps5-slim-1tb-usado",
+    "plataforma": "playstation",
+    "familia": "PlayStation 5",
+    "tipo": "console",
+    "modelo": "Slim",
+    "capacidade": "1TB",
+    "condicao": "usado",
+    "atributos": [
+      "1TB",
+      "Com leitor"
+    ],
+    "preco": {
+      "precoAVista": 2999,
+      "precoParcelado": 3199.92,
+      "parcelasMax": 12
+    },
+    "crediario": {
+      "total": 3399.6,
+      "parcelasMax": 10
+    },
+    "estoque": 2,
+    "retiradaImediata": true,
+    "garantiaTipo": "loja",
+    "garantiaAte": "+20d",
+    "usado": {
+      "estado": "excelente",
+      "acompanha": {
+        "console": true,
+        "controles": 1,
+        "cabos": true,
+        "caixa": false,
+        "jogo": false
+      },
+      "revisadoEm": "-3d",
+      "fotosReais": [
+        {
+          "src": "/images/used-detail-400.webp",
+          "alt": "Detalhe de marca de uso na lateral do PlayStation 5 Slim"
+        },
+        {
+          "src": "/images/used-detail-400.webp",
+          "alt": "Detalhe de marca de uso na parte superior do PlayStation 5 Slim"
+        }
+      ]
+    },
+    "avisos": [
+      "Não acompanha o jogo"
+    ],
+    "descricaoTecnica": "Console PlayStation 5 Slim com 1TB de armazenamento e leitor de disco. Revisado pela nossa assistência técnica antes da venda. Ideal para quem quer economizar sem abrir mão da garantia da loja.",
+    "imagens": [
+      {
+        "src": "/images/console-ps-400.webp",
+        "alt": "PlayStation 5 Slim usado, vista frontal"
+      }
+    ],
+    "criadoEm": "-3d",
+    "relevancia": 95
+  },
+  {
+    "id": "ps5-pro-novo",
+    "plataforma": "playstation",
+    "familia": "PlayStation 5",
+    "tipo": "console",
+    "modelo": "Pro",
+    "capacidade": "2TB",
+    "condicao": "lacrado",
+    "atributos": [
+      "2TB",
+      "Lacrado"
+    ],
+    "preco": {
+      "precoAVista": 5499,
+      "precoParcelado": 5938.92,
+      "parcelasMax": 12
+    },
+    "estoque": 5,
+    "retiradaImediata": true,
+    "garantiaTipo": "fabrica",
+    "garantiaAte": "+365d",
+    "avisos": [],
+    "descricaoTecnica": "Console PlayStation 5 Pro com 2TB de armazenamento, lacrado de fábrica. Maior poder gráfico para jogos em 4K com ray tracing aprimorado.",
+    "imagens": [
+      {
+        "src": "/images/console-ps-400.webp",
+        "alt": "PlayStation 5 Pro lacrado, vista frontal"
+      }
+    ],
+    "criadoEm": "-2d",
+    "relevancia": 92
+  },
+  {
+    "id": "preorder-lancado",
+    "plataforma": "playstation",
+    "familia": "PlayStation 5",
+    "tipo": "jogo",
+    "modelo": "Crônicas de Aldebar",
+    "condicao": "novo",
+    "atributos": [
+      "Mídia física",
+      "Legendas em português"
+    ],
+    "preco": {
+      "precoAVista": 299,
+      "precoParcelado": 313.98,
+      "parcelasMax": 6
+    },
+    "estoque": 8,
+    "retiradaImediata": true,
+    "dataLancamento": "-500d",
+    "avisos": [],
+    "descricaoTecnica": "Jogo de aventura e exploração para PlayStation 5, em mídia física com legendas em português. Já disponível para retirada imediata.",
+    "imagens": [
+      {
+        "src": "/images/game-disc-400.webp",
+        "alt": "PlayStation 5 Crônicas de Aldebar novo, vista frontal"
+      }
+    ],
+    "criadoEm": "-50d",
+    "relevancia": 70
+  },
+  {
+    "id": "ps5-controle-dualsense",
+    "plataforma": "playstation",
+    "familia": "PlayStation 5",
+    "tipo": "acessorio",
+    "modelo": "Controle DualSense",
+    "condicao": "novo",
+    "atributos": [
+      "Sem fio",
+      "Bateria recarregável"
+    ],
+    "preco": {
+      "precoAVista": 449,
+      "precoParcelado": 480.5,
+      "parcelasMax": 10
+    },
+    "estoque": 12,
+    "retiradaImediata": true,
+    "avisos": [],
+    "descricaoTecnica": "Controle sem fio DualSense original com feedback háptico e gatilhos adaptáveis. Compatível com todos os jogos de PlayStation 5.",
+    "imagens": [
+      {
+        "src": "/images/controller-400.webp",
+        "alt": "PlayStation 5 Controle DualSense novo, vista frontal"
+      }
+    ],
+    "criadoEm": "-15d",
+    "relevancia": 80
+  },
+  {
+    "id": "ps5-headset-pulse3d",
+    "plataforma": "playstation",
+    "familia": "PlayStation 5",
+    "tipo": "headset",
+    "modelo": "Headset Pulse 3D",
+    "condicao": "novo",
+    "atributos": [
+      "Sem fio",
+      "Áudio 3D"
+    ],
+    "preco": {
+      "precoAVista": 549,
+      "precoParcelado": 587.5,
+      "parcelasMax": 10
+    },
+    "estoque": 6,
+    "retiradaImediata": true,
+    "avisos": [],
+    "descricaoTecnica": "Headset sem fio com áudio 3D otimizado para PlayStation 5. Microfone integrado e até 12 horas de bateria.",
+    "imagens": [
+      {
+        "src": "/images/headset-400.webp",
+        "alt": "PlayStation 5 Headset Pulse 3D novo, vista frontal"
+      }
+    ],
+    "criadoEm": "-22d",
+    "relevancia": 65
+  },
+  {
+    "id": "ps4-slim-digital",
+    "plataforma": "playstation",
+    "familia": "PlayStation 4",
+    "tipo": "console",
+    "modelo": "Slim Digital",
+    "capacidade": "1TB",
+    "condicao": "usado",
+    "atributos": [
+      "1TB",
+      "Sem leitor"
+    ],
+    "preco": {
+      "precoAVista": 1499,
+      "precoParcelado": 1634,
+      "parcelasMax": 10
+    },
+    "estoque": 3,
+    "retiradaImediata": true,
+    "garantiaTipo": "loja",
+    "garantiaAte": "+60d",
+    "usado": {
+      "estado": "bom",
+      "acompanha": {
+        "console": true,
+        "controles": 1,
+        "cabos": true,
+        "caixa": false,
+        "jogo": false
+      },
+      "revisadoEm": "-8d",
+      "fotosReais": [
+        {
+          "src": "/images/used-detail-400.webp",
+          "alt": "Detalhe de marca de uso na lateral do PlayStation 4 Slim Digital"
+        },
+        {
+          "src": "/images/used-detail-400.webp",
+          "alt": "Detalhe de marca de uso na parte superior do PlayStation 4 Slim Digital"
+        }
+      ]
+    },
+    "avisos": [
+      "Somente mídia digital"
+    ],
+    "descricaoTecnica": "Console PlayStation 4 Slim, edição digital sem leitor de disco. Revisado e testado, ideal para quem joga apenas via loja digital.",
+    "imagens": [
+      {
+        "src": "/images/console-ps-400.webp",
+        "alt": "PlayStation 4 Slim Digital usado, vista frontal"
+      }
+    ],
+    "criadoEm": "-25d",
+    "relevancia": 60
+  },
+  {
+    "id": "xbox-series-s-usado-vencida",
+    "plataforma": "xbox",
+    "familia": "Xbox Series S",
+    "tipo": "console",
+    "modelo": "Console",
+    "capacidade": "512GB",
+    "condicao": "usado",
+    "atributos": [
+      "512GB",
+      "Sem leitor"
+    ],
+    "preco": {
+      "precoAVista": 1799,
+      "precoParcelado": 1961,
+      "parcelasMax": 10
+    },
+    "estoque": 2,
+    "retiradaImediata": true,
+    "garantiaTipo": "loja",
+    "garantiaAte": "-10d",
+    "usado": {
+      "estado": "bom",
+      "acompanha": {
+        "console": true,
+        "controles": 1,
+        "cabos": true,
+        "caixa": false,
+        "jogo": false
+      },
+      "revisadoEm": "-45d",
+      "fotosReais": [
+        {
+          "src": "/images/used-detail-400.webp",
+          "alt": "Detalhe de marca de uso na lateral do Xbox Series S"
+        },
+        {
+          "src": "/images/used-detail-400.webp",
+          "alt": "Detalhe de marca de uso na parte superior do Xbox Series S"
+        }
+      ]
+    },
+    "avisos": [],
+    "descricaoTecnica": "Console Xbox Series S com 512GB de armazenamento interno. Compacto e digital, ideal para jogos em até 1440p.",
+    "imagens": [
+      {
+        "src": "/images/console-xbox-400.webp",
+        "alt": "Xbox Series S Console usado, vista frontal"
+      }
+    ],
+    "criadoEm": "-40d",
+    "relevancia": 55
+  },
+  {
+    "id": "xbox-series-x-novo",
+    "plataforma": "xbox",
+    "familia": "Xbox Series X",
+    "tipo": "console",
+    "modelo": "Console",
+    "capacidade": "1TB",
+    "condicao": "lacrado",
+    "atributos": [
+      "1TB",
+      "Com leitor"
+    ],
+    "preco": {
+      "precoAVista": 3799,
+      "precoParcelado": 4102.92,
+      "parcelasMax": 12
+    },
+    "estoque": 4,
+    "retiradaImediata": true,
+    "garantiaTipo": "fabrica",
+    "garantiaAte": "+365d",
+    "avisos": [],
+    "descricaoTecnica": "Console Xbox Series X com 1TB de armazenamento e leitor de disco, lacrado de fábrica. O mais potente da linha Xbox atual.",
+    "imagens": [
+      {
+        "src": "/images/console-xbox-400.webp",
+        "alt": "Xbox Series X Console lacrado, vista frontal"
+      }
+    ],
+    "criadoEm": "-6d",
+    "relevancia": 90
+  },
+  {
+    "id": "xbox-jogo-forza-arena",
+    "plataforma": "xbox",
+    "familia": "Xbox Series X|S",
+    "tipo": "jogo",
+    "modelo": "Arena de Corrida",
+    "condicao": "novo",
+    "atributos": [
+      "Mídia física",
+      "Multijogador online"
+    ],
+    "preco": {
+      "precoAVista": 279,
+      "precoParcelado": 292.98,
+      "parcelasMax": 6
+    },
+    "estoque": 10,
+    "retiradaImediata": true,
+    "avisos": [],
+    "descricaoTecnica": "Jogo de corrida em mídia física para Xbox Series X|S, com modo multijogador online. Legendas e menus em português.",
+    "imagens": [
+      {
+        "src": "/images/game-disc-400.webp",
+        "alt": "Xbox Series X|S Arena de Corrida novo, vista frontal"
+      }
+    ],
+    "criadoEm": "-12d",
+    "relevancia": 68
+  },
+  {
+    "id": "xbox-controle-elite",
+    "plataforma": "xbox",
+    "familia": "Xbox Series X|S",
+    "tipo": "acessorio",
+    "modelo": "Controle Elite",
+    "condicao": "novo",
+    "atributos": [
+      "Sem fio",
+      "Componentes intercambiáveis"
+    ],
+    "preco": {
+      "precoAVista": 899,
+      "precoParcelado": 953,
+      "parcelasMax": 10
+    },
+    "estoque": 5,
+    "retiradaImediata": true,
+    "avisos": [],
+    "descricaoTecnica": "Controle sem fio Elite com componentes intercambiáveis e ajuste fino de sensibilidade. Compatível com Xbox Series X|S e PC.",
+    "imagens": [
+      {
+        "src": "/images/controller-400.webp",
+        "alt": "Xbox Series X|S Controle Elite novo, vista frontal"
+      }
+    ],
+    "criadoEm": "-18d",
+    "relevancia": 62
+  },
+  {
+    "id": "xbox-headset-stereo",
+    "plataforma": "xbox",
+    "familia": "Xbox Series X|S",
+    "tipo": "headset",
+    "modelo": "Headset Stereo",
+    "condicao": "novo",
+    "atributos": [
+      "Com fio",
+      "Microfone destacável"
+    ],
+    "preco": {
+      "precoAVista": 349,
+      "precoParcelado": 373.44,
+      "parcelasMax": 8
+    },
+    "estoque": 9,
+    "retiradaImediata": true,
+    "avisos": [],
+    "descricaoTecnica": "Headset com fio e microfone destacável, compatível com Xbox Series X|S e Xbox One. Encaixe direto no controle.",
+    "imagens": [
+      {
+        "src": "/images/headset-400.webp",
+        "alt": "Xbox Series X|S Headset Stereo novo, vista frontal"
+      }
+    ],
+    "criadoEm": "-28d",
+    "relevancia": 50
+  },
+  {
+    "id": "xbox-one-usado",
+    "plataforma": "xbox",
+    "familia": "Xbox One",
+    "tipo": "console",
+    "modelo": "S",
+    "capacidade": "1TB",
+    "condicao": "usado",
+    "atributos": [
+      "1TB",
+      "Com leitor"
+    ],
+    "preco": {
+      "precoAVista": 999,
+      "precoParcelado": 1089,
+      "parcelasMax": 10
+    },
+    "estoque": 2,
+    "retiradaImediata": true,
+    "garantiaTipo": "loja",
+    "garantiaAte": "+90d",
+    "usado": {
+      "estado": "muito-bom",
+      "acompanha": {
+        "console": true,
+        "controles": 1,
+        "cabos": true,
+        "caixa": false,
+        "jogo": false
+      },
+      "revisadoEm": "-6d",
+      "fotosReais": [
+        {
+          "src": "/images/used-detail-400.webp",
+          "alt": "Detalhe de marca de uso na lateral do Xbox One S"
+        },
+        {
+          "src": "/images/used-detail-400.webp",
+          "alt": "Detalhe de marca de uso na parte superior do Xbox One S"
+        }
+      ]
+    },
+    "avisos": [],
+    "descricaoTecnica": "Console Xbox One S com 1TB de armazenamento e leitor de disco. Revisado, testado e pronto para uso imediato.",
+    "imagens": [
+      {
+        "src": "/images/console-xbox-400.webp",
+        "alt": "Xbox One S usado, vista frontal"
+      }
+    ],
+    "criadoEm": "-33d",
+    "relevancia": 48
+  },
+  {
+    "id": "switch-oled-revisao",
+    "plataforma": "nintendo",
+    "familia": "Nintendo Switch",
+    "tipo": "console",
+    "modelo": "OLED",
+    "condicao": "usado",
+    "atributos": [
+      "Tela OLED",
+      "Com dock"
+    ],
+    "preco": {
+      "precoAVista": 1899,
+      "precoParcelado": 2051,
+      "parcelasMax": 10
+    },
+    "estoque": 1,
+    "emRevisao": true,
+    "retiradaImediata": false,
+    "garantiaTipo": "loja",
+    "garantiaAte": "+90d",
+    "usado": {
+      "estado": "bom",
+      "acompanha": {
+        "console": true,
+        "controles": 2,
+        "cabos": true,
+        "caixa": false,
+        "jogo": false
+      },
+      "revisadoEm": "-1d",
+      "fotosReais": [
+        {
+          "src": "/images/used-detail-400.webp",
+          "alt": "Detalhe de marca de uso na lateral do Nintendo Switch OLED"
+        },
+        {
+          "src": "/images/used-detail-400.webp",
+          "alt": "Detalhe de marca de uso na parte superior do Nintendo Switch OLED"
+        }
+      ]
+    },
+    "avisos": [],
+    "descricaoTecnica": "Console Nintendo Switch modelo OLED com tela de 7 polegadas. Em revisão técnica final antes da liberação para venda.",
+    "imagens": [
+      {
+        "src": "/images/console-switch-400.webp",
+        "alt": "Nintendo Switch OLED usado, vista frontal"
+      }
+    ],
+    "criadoEm": "-1d",
+    "relevancia": 58
+  },
+  {
+    "id": "preorder-futuro",
+    "plataforma": "nintendo",
+    "familia": "Nintendo Switch",
+    "tipo": "jogo",
+    "modelo": "Reino de Pedraluz",
+    "condicao": "novo",
+    "atributos": [
+      "Cartucho",
+      "Aventura"
+    ],
+    "preco": {
+      "precoAVista": 349,
+      "precoParcelado": 366.48,
+      "parcelasMax": 6
+    },
+    "estoque": 15,
+    "retiradaImediata": true,
+    "dataLancamento": "+45d",
+    "avisos": [],
+    "descricaoTecnica": "Jogo de aventura em cartucho para Nintendo Switch, com pré-venda aberta. Reserve o seu e retire no lançamento.",
+    "imagens": [
+      {
+        "src": "/images/game-cart-400.webp",
+        "alt": "Nintendo Switch Reino de Pedraluz novo, vista frontal"
+      }
+    ],
+    "criadoEm": "-5d",
+    "relevancia": 75
+  },
+  {
+    "id": "switch-standard-novo",
+    "plataforma": "nintendo",
+    "familia": "Nintendo Switch",
+    "tipo": "console",
+    "modelo": "Standard",
+    "capacidade": "32GB",
+    "condicao": "novo",
+    "atributos": [
+      "32GB",
+      "Com dock"
+    ],
+    "preco": {
+      "precoAVista": 1699,
+      "precoParcelado": 1835,
+      "parcelasMax": 10
+    },
+    "estoque": 7,
+    "retiradaImediata": true,
+    "garantiaTipo": "fabrica",
+    "garantiaAte": "+365d",
+    "avisos": [],
+    "descricaoTecnica": "Console Nintendo Switch modelo padrão, com dock para uso na TV e modo portátil. Ideal para jogar em qualquer lugar da casa.",
+    "imagens": [
+      {
+        "src": "/images/console-switch-400.webp",
+        "alt": "Nintendo Switch Standard novo, vista frontal"
+      }
+    ],
+    "criadoEm": "-10d",
+    "relevancia": 85
+  },
+  {
+    "id": "switch-controle-joycon",
+    "plataforma": "nintendo",
+    "familia": "Nintendo Switch",
+    "tipo": "acessorio",
+    "modelo": "Par de Joy-Con",
+    "condicao": "novo",
+    "atributos": [
+      "Sem fio",
+      "Par esquerdo e direito"
+    ],
+    "preco": {
+      "precoAVista": 549,
+      "precoParcelado": 587.5,
+      "parcelasMax": 10
+    },
+    "estoque": 8,
+    "retiradaImediata": true,
+    "avisos": [],
+    "descricaoTecnica": "Par de controles Joy-Con originais, esquerdo e direito, compatíveis com todos os modelos de Nintendo Switch.",
+    "imagens": [
+      {
+        "src": "/images/controller-400.webp",
+        "alt": "Nintendo Switch Par de Joy-Con novo, vista frontal"
+      }
+    ],
+    "criadoEm": "-14d",
+    "relevancia": 66
+  },
+  {
+    "id": "switch-headset-generico",
+    "plataforma": "nintendo",
+    "familia": "Nintendo Switch",
+    "tipo": "headset",
+    "modelo": "Headset Gamer",
+    "condicao": "novo",
+    "atributos": [
+      "Com fio",
+      "Dobrável"
+    ],
+    "preco": {
+      "precoAVista": 199,
+      "precoParcelado": 212.94,
+      "parcelasMax": 6
+    },
+    "estoque": 11,
+    "retiradaImediata": true,
+    "avisos": [],
+    "descricaoTecnica": "Headset com fio e microfone integrado, compatível com Nintendo Switch em modo dock ou portátil.",
+    "imagens": [
+      {
+        "src": "/images/headset-400.webp",
+        "alt": "Nintendo Switch Headset Gamer novo, vista frontal"
+      }
+    ],
+    "criadoEm": "-20d",
+    "relevancia": 45
+  },
+  {
+    "id": "switch2-jogo-corrida",
+    "plataforma": "nintendo",
+    "familia": "Nintendo Switch 2",
+    "tipo": "jogo",
+    "modelo": "Circuito Estelar",
+    "condicao": "novo",
+    "atributos": [
+      "Cartucho",
+      "Corrida"
+    ],
+    "preco": {
+      "precoAVista": 399,
+      "precoParcelado": 418.96,
+      "parcelasMax": 8
+    },
+    "estoque": 9,
+    "retiradaImediata": true,
+    "avisos": [],
+    "descricaoTecnica": "Jogo de corrida em cartucho para Nintendo Switch 2, com suporte a até quatro jogadores em tela dividida.",
+    "imagens": [
+      {
+        "src": "/images/game-cart-400.webp",
+        "alt": "Nintendo Switch 2 Circuito Estelar novo, vista frontal"
+      }
+    ],
+    "criadoEm": "-9d",
+    "relevancia": 72
+  },
+  {
+    "id": "ps3-slim-usado",
+    "plataforma": "retro",
+    "familia": "PlayStation 3",
+    "tipo": "console",
+    "modelo": "Slim",
+    "capacidade": "160GB",
+    "condicao": "usado",
+    "atributos": [
+      "160GB",
+      "Com leitor"
+    ],
+    "preco": {
+      "precoAVista": 699,
+      "precoParcelado": 761.92,
+      "parcelasMax": 8
+    },
+    "estoque": 2,
+    "retiradaImediata": true,
+    "garantiaTipo": "loja",
+    "garantiaAte": "+90d",
+    "usado": {
+      "estado": "bom",
+      "acompanha": {
+        "console": true,
+        "controles": 1,
+        "cabos": true,
+        "caixa": false,
+        "jogo": false
+      },
+      "revisadoEm": "-11d",
+      "fotosReais": [
+        {
+          "src": "/images/used-detail-400.webp",
+          "alt": "Detalhe de marca de uso na lateral do PlayStation 3 Slim"
+        },
+        {
+          "src": "/images/used-detail-400.webp",
+          "alt": "Detalhe de marca de uso na parte superior do PlayStation 3 Slim"
+        }
+      ]
+    },
+    "avisos": [],
+    "descricaoTecnica": "Console PlayStation 3 modelo Slim, revisado e testado, com leitor de disco funcionando perfeitamente. Clássico da geração retrô.",
+    "imagens": [
+      {
+        "src": "/images/console-retro-400.webp",
+        "alt": "PlayStation 3 Slim usado, vista frontal"
+      }
+    ],
+    "criadoEm": "-16d",
+    "relevancia": 40
+  },
+  {
+    "id": "xbox360-usado",
+    "plataforma": "retro",
+    "familia": "Xbox 360",
+    "tipo": "console",
+    "modelo": "Slim",
+    "capacidade": "250GB",
+    "condicao": "usado",
+    "atributos": [
+      "250GB",
+      "Com leitor"
+    ],
+    "preco": {
+      "precoAVista": 599,
+      "precoParcelado": 652.96,
+      "parcelasMax": 8
+    },
+    "estoque": 1,
+    "retiradaImediata": true,
+    "garantiaTipo": "loja",
+    "garantiaAte": "+90d",
+    "usado": {
+      "estado": "muito-bom",
+      "acompanha": {
+        "console": true,
+        "controles": 1,
+        "cabos": true,
+        "caixa": false,
+        "jogo": false
+      },
+      "revisadoEm": "-21d",
+      "fotosReais": [
+        {
+          "src": "/images/used-detail-400.webp",
+          "alt": "Detalhe de marca de uso na lateral do Xbox 360 Slim"
+        },
+        {
+          "src": "/images/used-detail-400.webp",
+          "alt": "Detalhe de marca de uso na parte superior do Xbox 360 Slim"
+        }
+      ]
+    },
+    "avisos": [],
+    "descricaoTecnica": "Console Xbox 360 modelo Slim, revisado e testado, com leitor de disco funcionando perfeitamente. Ótimo para revisitar clássicos.",
+    "imagens": [
+      {
+        "src": "/images/console-retro-400.webp",
+        "alt": "Xbox 360 Slim usado, vista frontal"
+      }
+    ],
+    "criadoEm": "-27d",
+    "relevancia": 38
+  },
+  {
+    "id": "wiiu-usado",
+    "plataforma": "retro",
+    "familia": "Wii U",
+    "tipo": "console",
+    "modelo": "Deluxe",
+    "capacidade": "32GB",
+    "condicao": "usado",
+    "atributos": [
+      "32GB",
+      "Com GamePad"
+    ],
+    "preco": {
+      "precoAVista": 799,
+      "precoParcelado": 862.96,
+      "parcelasMax": 8
+    },
+    "estoque": 1,
+    "retiradaImediata": true,
+    "garantiaTipo": "loja",
+    "garantiaAte": "+90d",
+    "usado": {
+      "estado": "bom",
+      "acompanha": {
+        "console": true,
+        "controles": 0,
+        "cabos": true,
+        "caixa": false,
+        "jogo": false
+      },
+      "revisadoEm": "-35d",
+      "fotosReais": [
+        {
+          "src": "/images/used-detail-400.webp",
+          "alt": "Detalhe de marca de uso na lateral do Wii U Deluxe"
+        },
+        {
+          "src": "/images/used-detail-400.webp",
+          "alt": "Detalhe de marca de uso na parte superior do Wii U Deluxe"
+        }
+      ]
+    },
+    "avisos": [],
+    "descricaoTecnica": "Console Wii U modelo Deluxe, acompanha GamePad original revisado. Testado e funcionando perfeitamente para jogos em família.",
+    "imagens": [
+      {
+        "src": "/images/console-retro-400.webp",
+        "alt": "Wii U Deluxe usado, vista frontal"
+      }
+    ],
+    "criadoEm": "-38d",
+    "relevancia": 35
+  },
+  {
+    "id": "nintendo-3ds-usado",
+    "plataforma": "retro",
+    "familia": "Nintendo 3DS",
+    "tipo": "console",
+    "modelo": "XL",
+    "condicao": "usado",
+    "atributos": [
+      "Tela dupla",
+      "Portátil"
+    ],
+    "preco": {
+      "precoAVista": 549,
+      "precoParcelado": 598.44,
+      "parcelasMax": 6
+    },
+    "estoque": 2,
+    "retiradaImediata": true,
+    "garantiaTipo": "loja",
+    "garantiaAte": "+90d",
+    "usado": {
+      "estado": "excelente",
+      "acompanha": {
+        "console": true,
+        "controles": 0,
+        "cabos": true,
+        "caixa": false,
+        "jogo": false
+      },
+      "revisadoEm": "-4d",
+      "fotosReais": [
+        {
+          "src": "/images/used-detail-400.webp",
+          "alt": "Detalhe de marca de uso na lateral do Nintendo 3DS XL"
+        },
+        {
+          "src": "/images/used-detail-400.webp",
+          "alt": "Detalhe de marca de uso na parte superior do Nintendo 3DS XL"
+        }
+      ]
+    },
+    "avisos": [],
+    "descricaoTecnica": "Console portátil Nintendo 3DS modelo XL, com tela dupla revisada e bateria testada. Acompanha carregador.",
+    "imagens": [
+      {
+        "src": "/images/handheld-400.webp",
+        "alt": "Nintendo 3DS XL usado, vista frontal"
+      }
+    ],
+    "criadoEm": "-19d",
+    "relevancia": 42
+  },
+  {
+    "id": "ps2-usado",
+    "plataforma": "retro",
+    "familia": "PlayStation 2",
+    "tipo": "console",
+    "modelo": "Slim",
+    "condicao": "usado",
+    "atributos": [
+      "Com leitor",
+      "Memory card incluso"
+    ],
+    "preco": {
+      "precoAVista": 449,
+      "precoParcelado": 489.42,
+      "parcelasMax": 6
+    },
+    "estoque": 3,
+    "retiradaImediata": true,
+    "garantiaTipo": "loja",
+    "garantiaAte": "+90d",
+    "usado": {
+      "estado": "bom",
+      "acompanha": {
+        "console": true,
+        "controles": 1,
+        "cabos": true,
+        "caixa": false,
+        "jogo": false
+      },
+      "revisadoEm": "-13d",
+      "fotosReais": [
+        {
+          "src": "/images/used-detail-400.webp",
+          "alt": "Detalhe de marca de uso na lateral do PlayStation 2 Slim"
+        },
+        {
+          "src": "/images/used-detail-400.webp",
+          "alt": "Detalhe de marca de uso na parte superior do PlayStation 2 Slim"
+        }
+      ]
+    },
+    "avisos": [],
+    "descricaoTecnica": "Console PlayStation 2 modelo Slim, revisado, acompanha memory card. Um clássico atemporal para a coleção.",
+    "imagens": [
+      {
+        "src": "/images/console-retro-400.webp",
+        "alt": "PlayStation 2 Slim usado, vista frontal"
+      }
+    ],
+    "criadoEm": "-52d",
+    "relevancia": 44
+  },
+  {
+    "id": "snes-usado",
+    "plataforma": "retro",
+    "familia": "Super Nintendo",
+    "tipo": "console",
+    "modelo": "Standard",
+    "condicao": "usado",
+    "atributos": [
+      "Com dois controles",
+      "Clássico"
+    ],
+    "preco": {
+      "precoAVista": 899,
+      "precoParcelado": 970.92,
+      "parcelasMax": 6
+    },
+    "estoque": 1,
+    "retiradaImediata": true,
+    "garantiaTipo": "loja",
+    "garantiaAte": "+90d",
+    "usado": {
+      "estado": "excelente",
+      "acompanha": {
+        "console": true,
+        "controles": 2,
+        "cabos": true,
+        "caixa": false,
+        "jogo": false
+      },
+      "revisadoEm": "-9d",
+      "fotosReais": [
+        {
+          "src": "/images/used-detail-400.webp",
+          "alt": "Detalhe de marca de uso na lateral do Super Nintendo Standard"
+        },
+        {
+          "src": "/images/used-detail-400.webp",
+          "alt": "Detalhe de marca de uso na parte superior do Super Nintendo Standard"
+        }
+      ]
+    },
+    "avisos": [],
+    "descricaoTecnica": "Console Super Nintendo original, revisado internamente, acompanha dois controles. Peça de colecionador em ótimo estado.",
+    "imagens": [
+      {
+        "src": "/images/console-retro-400.webp",
+        "alt": "Super Nintendo Standard usado, vista frontal"
+      }
+    ],
+    "criadoEm": "-60d",
+    "relevancia": 36
+  },
+  {
+    "id": "giftcard-playstation",
+    "plataforma": "multi",
+    "familia": "PlayStation",
+    "tipo": "gift-card",
+    "modelo": "Gift Card",
+    "condicao": "novo",
+    "atributos": [
+      "Envio digital",
+      "Região Brasil"
+    ],
+    "preco": {
+      "precoAVista": 50,
+      "precoParcelado": 50,
+      "parcelasMax": 1
+    },
+    "estoque": 999,
+    "retiradaImediata": true,
+    "avisos": [],
+    "descricaoTecnica": "Gift card digital PlayStation com valores de 50 a 300 reais. Envio do código por e-mail logo após a confirmação do pagamento.",
+    "imagens": [
+      {
+        "src": "/images/giftcard-playstation-400.webp",
+        "alt": "PlayStation Gift Card, vista frontal"
+      }
+    ],
+    "giftCard": {
+      "valores": [
+        50,
+        100,
+        200,
+        300
+      ],
+      "regiao": "Brasil"
+    },
+    "criadoEm": "-7d",
+    "relevancia": 55
+  },
+  {
+    "id": "giftcard-xbox",
+    "plataforma": "multi",
+    "familia": "Xbox",
+    "tipo": "gift-card",
+    "modelo": "Gift Card",
+    "condicao": "novo",
+    "atributos": [
+      "Envio digital",
+      "Região Brasil"
+    ],
+    "preco": {
+      "precoAVista": 50,
+      "precoParcelado": 50,
+      "parcelasMax": 1
+    },
+    "estoque": 999,
+    "retiradaImediata": true,
+    "avisos": [],
+    "descricaoTecnica": "Gift card digital Xbox com valores de 50 a 300 reais. Envio do código por e-mail logo após a confirmação do pagamento.",
+    "imagens": [
+      {
+        "src": "/images/giftcard-xbox-400.webp",
+        "alt": "Xbox Gift Card, vista frontal"
+      }
+    ],
+    "giftCard": {
+      "valores": [
+        50,
+        100,
+        200,
+        300
+      ],
+      "regiao": "Brasil"
+    },
+    "criadoEm": "-7d",
+    "relevancia": 55
+  },
+  {
+    "id": "giftcard-nintendo",
+    "plataforma": "multi",
+    "familia": "Nintendo",
+    "tipo": "gift-card",
+    "modelo": "Gift Card",
+    "condicao": "novo",
+    "atributos": [
+      "Envio digital",
+      "Região Brasil"
+    ],
+    "preco": {
+      "precoAVista": 50,
+      "precoParcelado": 50,
+      "parcelasMax": 1
+    },
+    "estoque": 999,
+    "retiradaImediata": true,
+    "avisos": [],
+    "descricaoTecnica": "Gift card digital Nintendo com valores de 50 a 300 reais. Envio do código por e-mail logo após a confirmação do pagamento.",
+    "imagens": [
+      {
+        "src": "/images/giftcard-nintendo-400.webp",
+        "alt": "Nintendo Gift Card, vista frontal"
+      }
+    ],
+    "giftCard": {
+      "valores": [
+        50,
+        100,
+        200,
+        300
+      ],
+      "regiao": "Brasil"
+    },
+    "criadoEm": "-7d",
+    "relevancia": 55
+  },
+  {
+    "id": "giftcard-steam",
+    "plataforma": "multi",
+    "familia": "Steam",
+    "tipo": "gift-card",
+    "modelo": "Gift Card",
+    "condicao": "novo",
+    "atributos": [
+      "Envio digital",
+      "Região Brasil"
+    ],
+    "preco": {
+      "precoAVista": 50,
+      "precoParcelado": 50,
+      "parcelasMax": 1
+    },
+    "estoque": 999,
+    "retiradaImediata": true,
+    "avisos": [],
+    "descricaoTecnica": "Gift card digital Steam com valores de 50 a 300 reais. Envio do código por e-mail logo após a confirmação do pagamento.",
+    "imagens": [
+      {
+        "src": "/images/giftcard-steam-400.webp",
+        "alt": "Steam Gift Card, vista frontal"
+      }
+    ],
+    "giftCard": {
+      "valores": [
+        50,
+        100,
+        200,
+        300
+      ],
+      "regiao": "Brasil"
+    },
+    "criadoEm": "-7d",
+    "relevancia": 55
+  },
+  {
+    "id": "giftcard-googleplay",
+    "plataforma": "multi",
+    "familia": "Google Play",
+    "tipo": "gift-card",
+    "modelo": "Gift Card",
+    "condicao": "novo",
+    "atributos": [
+      "Envio digital",
+      "Região Brasil"
+    ],
+    "preco": {
+      "precoAVista": 50,
+      "precoParcelado": 50,
+      "parcelasMax": 1
+    },
+    "estoque": 999,
+    "retiradaImediata": true,
+    "avisos": [],
+    "descricaoTecnica": "Gift card digital Google Play com valores de 50 a 300 reais. Envio do código por e-mail logo após a confirmação do pagamento.",
+    "imagens": [
+      {
+        "src": "/images/giftcard-googleplay-400.webp",
+        "alt": "Google Play Gift Card, vista frontal"
+      }
+    ],
+    "giftCard": {
+      "valores": [
+        50,
+        100,
+        200,
+        300
+      ],
+      "regiao": "Brasil"
+    },
+    "criadoEm": "-7d",
+    "relevancia": 55
+  },
+  {
+    "id": "giftcard-roblox",
+    "plataforma": "multi",
+    "familia": "Roblox",
+    "tipo": "gift-card",
+    "modelo": "Gift Card",
+    "condicao": "novo",
+    "atributos": [
+      "Envio digital",
+      "Região Brasil"
+    ],
+    "preco": {
+      "precoAVista": 50,
+      "precoParcelado": 50,
+      "parcelasMax": 1
+    },
+    "estoque": 999,
+    "retiradaImediata": true,
+    "avisos": [],
+    "descricaoTecnica": "Gift card digital Roblox com valores de 50 a 300 reais. Envio do código por e-mail logo após a confirmação do pagamento.",
+    "imagens": [
+      {
+        "src": "/images/giftcard-roblox-400.webp",
+        "alt": "Roblox Gift Card, vista frontal"
+      }
+    ],
+    "giftCard": {
+      "valores": [
+        50,
+        100,
+        200,
+        300
+      ],
+      "regiao": "Brasil"
+    },
+    "criadoEm": "-7d",
+    "relevancia": 55
+  }
+]

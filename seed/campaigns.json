@@ -1,0 +1,4 @@
+[
+  { "id": "semana-retro", "titulo": "Semana Retrô", "texto": "Clássicos revisados com garantia da loja.", "href": "/retro", "inicio": "-3d", "fim": "+10d" },
+  { "id": "black-friday-2023", "titulo": "Black Friday 2023", "texto": "Ofertas encerradas.", "href": "/produtos", "inicio": "2023-11-20", "fim": "2023-11-30" }
+]

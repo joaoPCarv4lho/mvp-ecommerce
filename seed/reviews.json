@@ -1,0 +1,37 @@
+[
+  {
+    "id": "r1",
+    "autor": "Marcos Silva",
+    "nota": 5,
+    "texto": "Fiz a troca de um jogo que não gostei e o processo foi bem rápido, sem burocracia. Recomendo.",
+    "data": "-5d"
+  },
+  {
+    "id": "r2",
+    "autor": "Fernanda Costa",
+    "nota": 5,
+    "texto": "Levei meu console para a assistência técnica e resolveram em menos de dois dias. Atendimento nota 10.",
+    "data": "-18d"
+  },
+  {
+    "id": "r3",
+    "autor": "Diego Almeida",
+    "nota": 4,
+    "texto": "Comprei um usado revisado e chegou funcionando perfeitamente, com pequenos detalhes de uso já avisados antes da compra.",
+    "data": "-32d"
+  },
+  {
+    "id": "r4",
+    "autor": "Juliana Rocha",
+    "nota": 5,
+    "texto": "Comprei online e fiz a retirada na loja no mesmo dia, super rápido e o pessoal foi muito atencioso.",
+    "data": "-60d"
+  },
+  {
+    "id": "r5",
+    "autor": "Rafael Souza",
+    "nota": 5,
+    "texto": "Loja de confiança em Joinville, já troquei jogos e comprei usados revisados sem nenhum problema.",
+    "data": "-90d"
+  }
+]

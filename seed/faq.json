@@ -1,0 +1,56 @@
+{
+  "assistencia": [
+    {
+      "pergunta": "Quais consoles vocês consertam?",
+      "resposta": "Fazemos conserto de videogame em Joinville para PlayStation, Xbox e Nintendo, incluindo modelos retrô."
+    },
+    {
+      "pergunta": "Preciso agendar para levar o console?",
+      "resposta": "Não é necessário agendamento. Basta trazer o aparelho até a loja em nosso horário de atendimento."
+    },
+    {
+      "pergunta": "Qual o prazo médio de reparo?",
+      "resposta": "Varia de 1 a 5 dias úteis conforme o serviço, e o prazo é informado no orçamento antes de qualquer conserto."
+    },
+    {
+      "pergunta": "O orçamento tem custo?",
+      "resposta": "Não. A avaliação do defeito é gratuita e sem compromisso de fechar o serviço."
+    },
+    {
+      "pergunta": "Os reparos têm garantia?",
+      "resposta": "Sim, todo serviço sai com garantia da loja, com prazo específico para cada tipo de reparo."
+    }
+  ],
+  "troca": [
+    {
+      "pergunta": "Quais jogos e consoles vocês aceitam na troca?",
+      "resposta": "Aceitamos consoles e jogos físicos das principais plataformas, incluindo modelos retrô, em bom estado de conservação."
+    },
+    {
+      "pergunta": "Como funciona a avaliação do item?",
+      "resposta": "Um técnico avalia o funcionamento e o estado de conservação na loja e informa o valor de troca na hora."
+    },
+    {
+      "pergunta": "Jogos digitais entram na troca?",
+      "resposta": "Não. Como não há mídia física, jogos digitais não são aceitos no programa de troca."
+    },
+    {
+      "pergunta": "Posso complementar o valor em dinheiro?",
+      "resposta": "Sim, o valor avaliado do seu item é abatido no preço do produto escolhido, e a diferença pode ser paga no Pix ou no cartão."
+    }
+  ],
+  "giftcards": [
+    {
+      "pergunta": "Os gift cards funcionam em qualquer conta?",
+      "resposta": "Sim, desde que a conta esteja configurada para a região Brasil na respectiva loja digital."
+    },
+    {
+      "pergunta": "O código é enviado na hora?",
+      "resposta": "Sim, o código é entregue digitalmente logo após a confirmação do pagamento."
+    },
+    {
+      "pergunta": "Gift card tem prazo de validade?",
+      "resposta": "O saldo creditado não expira, seguindo a política da própria plataforma do gift card."
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "limpeza-pasta-termica",
+    "nome": "Limpeza e troca de pasta térmica",
+    "descricao": "Remoção de poeira interna e substituição da pasta térmica do processador. Reduz ruído do cooler e evita desligamentos por superaquecimento.",
+    "aPartirDe": 150,
+    "prazoMedio": "1 dia útil",
+    "garantia": "90 dias"
+  },
+  {
+    "id": "reparo-porta-hdmi",
+    "nome": "Reparo de porta HDMI",
+    "descricao": "Troca do conector HDMI danificado por mau uso ou queda. Testado com TV e monitor antes da entrega.",
+    "aPartirDe": 280,
+    "prazoMedio": "3 dias úteis",
+    "garantia": "90 dias"
+  },
+  {
+    "id": "drift-analogico",
+    "nome": "Conserto de drift de analógico",
+    "descricao": "Substituição dos módulos do analógico com movimento indevido de personagem ou câmera.",
+    "aPartirDe": 120,
+    "prazoMedio": "1 dia útil",
+    "garantia": "90 dias"
+  },
+  {
+    "id": "troca-leitor",
+    "nome": "Troca de leitor de disco",
+    "descricao": "Substituição do leitor óptico que não reconhece mídias físicas ou faz ruído excessivo ao ler o disco.",
+    "aPartirDe": 350,
+    "prazoMedio": "3 a 5 dias úteis",
+    "garantia": "90 dias"
+  },
+  {
+    "id": "reparo-fonte",
+    "nome": "Reparo de fonte interna",
+    "descricao": "Diagnóstico e reparo da fonte de alimentação em consoles que não ligam ou desligam sozinhos.",
+    "aPartirDe": 300,
+    "prazoMedio": "3 dias úteis",
+    "garantia": "90 dias"
+  },
+  {
+    "id": "desbloqueio-travamento",
+    "nome": "Desbloqueio de travamento e atualização de sistema",
+    "descricao": "Correção de tela travada, loop de reinicialização ou sistema desatualizado que impede o uso normal do console.",
+    "aPartirDe": 100,
+    "prazoMedio": "1 dia útil",
+    "garantia": "30 dias"
+  }
+]

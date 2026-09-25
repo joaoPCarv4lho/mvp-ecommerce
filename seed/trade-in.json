@@ -1,0 +1,20 @@
+[
+  { "plataforma": "playstation", "familia": "PlayStation 5", "tipo": "console", "modelo": "Console PS5 (Standard ou Digital)", "aceito": true },
+  { "plataforma": "playstation", "familia": "PlayStation 4", "tipo": "console", "modelo": "Console PS4 (todas as versões)", "aceito": true },
+  { "plataforma": "xbox", "familia": "Xbox Series X|S", "tipo": "console", "modelo": "Console Xbox Series X ou S", "aceito": true },
+  { "plataforma": "xbox", "familia": "Xbox One", "tipo": "console", "modelo": "Console Xbox One (todas as versões)", "aceito": true },
+  { "plataforma": "nintendo", "familia": "Nintendo Switch", "tipo": "console", "modelo": "Console Switch (modelo padrão)", "aceito": true },
+  { "plataforma": "nintendo", "familia": "Nintendo Switch", "tipo": "console", "modelo": "Console Switch OLED", "aceito": true },
+  { "plataforma": "retro", "familia": "PlayStation 3", "tipo": "console", "modelo": "Console PS3 (Slim ou Super Slim)", "aceito": true },
+  { "plataforma": "retro", "familia": "Xbox 360", "tipo": "console", "modelo": "Console Xbox 360", "aceito": true },
+  { "plataforma": "retro", "familia": "Wii U", "tipo": "console", "modelo": "Console Wii U", "aceito": true },
+  { "plataforma": "retro", "familia": "Nintendo 3DS", "tipo": "console", "modelo": "Console 3DS ou 2DS", "aceito": true },
+  { "plataforma": "playstation", "familia": "PlayStation 5", "tipo": "jogo", "modelo": "Jogos físicos de PS5", "aceito": true },
+  { "plataforma": "playstation", "familia": "PlayStation 4", "tipo": "jogo", "modelo": "Jogos físicos de PS4", "aceito": true },
+  { "plataforma": "nintendo", "familia": "Nintendo Switch", "tipo": "jogo", "modelo": "Jogos em cartucho de Switch", "aceito": true },
+  { "plataforma": "xbox", "familia": "Xbox Series X|S", "tipo": "jogo", "modelo": "Jogos físicos de Xbox", "aceito": true },
+  { "plataforma": "multi", "familia": "Diversos", "tipo": "jogo", "modelo": "Jogos digitais (código ou conta)", "aceito": false, "motivo": "Jogos digitais — não há mídia física" },
+  { "plataforma": "retro", "familia": "Diversos", "tipo": "console", "modelo": "Consoles com placa oxidada ou queimada", "aceito": false, "motivo": "Consoles com placa oxidada" },
+  { "plataforma": "multi", "familia": "Diversos", "tipo": "console", "modelo": "Consoles com sistema desbloqueado (jailbreak)", "aceito": false, "motivo": "Consoles desbloqueados/modificados" },
+  { "plataforma": "multi", "familia": "Diversos", "tipo": "console", "modelo": "Controles e cabos de fabricação paralela", "aceito": false, "motivo": "Acessórios paralelos" }
+]
