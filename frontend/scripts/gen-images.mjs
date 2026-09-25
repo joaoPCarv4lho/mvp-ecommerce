@@ -42,7 +42,6 @@ const FONT = {
   b: ['#....', '#....', '#.##.', '##..#', '#...#', '#...#', '####.'],
   d: ['....#', '....#', '.####', '#...#', '#...#', '#...#', '.####'],
   e: ['.....', '.....', '.###.', '#...#', '#####', '#....', '.####'],
-  g: ['.....', '.####', '#...#', '#...#', '.####', '....#', '.###.'],
   h: ['#....', '#....', '#.##.', '##..#', '#...#', '#...#', '#...#'],
   i: ['..#..', '.....', '..#..', '..#..', '..#..', '..#..', '..#..'],
   j: ['...#.', '.....', '...#.', '...#.', '...#.', '#..#.', '.##..'],
@@ -57,13 +56,17 @@ const FONT = {
   v: ['.....', '.....', '#...#', '#...#', '#...#', '.#.#.', '..#..'],
   x: ['.....', '.....', '#...#', '.#.#.', '..#..', '.#.#.', '#...#'],
   y: ['.....', '.....', '#...#', '#...#', '.####', '....#', '.###.'],
-  ã: ['.#.#.', '.....', '.###.', '....#', '.####', '#...#', '.####'],
-  é: ['..#..', '.....', '.###.', '#...#', '#####', '#....', '.####'],
+  // g gets a real descender (8th row) so "nostalgia"/"Google" don't read as "9".
+  g: ['.....', '.....', '.###.', '#...#', '#...#', '.###.', '...#.', '.##..'],
+  // A real tilde wave (2 rows, ≥4 cells wide) instead of two separate dots (which read as "ä").
+  ã: ['.##.#', '#..#.', '.###.', '....#', '.####', '#...#', '.####'],
+  // A short diagonal acute-accent tick instead of a plain square dot.
+  é: ['...#.', '..#..', '.###.', '#...#', '#####', '#....', '.####'],
 };
 
 for (const [ch, rows] of Object.entries(FONT)) {
-  if (rows.length !== 7 || rows.some((r) => r.length !== 5)) {
-    throw new Error(`gen-images: malformed glyph for "${ch}" (expected 7 rows of 5 chars)`);
+  if ((rows.length !== 7 && rows.length !== 8) || rows.some((r) => r.length !== 5)) {
+    throw new Error(`gen-images: malformed glyph for "${ch}" (expected 7 or 8 rows of 5 chars)`);
   }
 }
 
@@ -158,11 +161,11 @@ const SQUARE_ILLUSTRATIONS = {
     { color: ACTION, build: (g) => gcircle(g, 10, 11, 3) },
     { color: BG, build: (g) => gcircle(g, 10, 11, 1) },
   ]),
-  // Flat tablet with two side joy-con blocks.
+  // Flat tablet with two side joy-con blocks, touching the tablet body (one connected device).
   'console-switch': squareBody([
-    { color: BRAND, build: (g) => { grect(g, 6, 7, 8, 7); grect(g, 2, 6, 3, 9); grect(g, 15, 6, 3, 9); } },
+    { color: BRAND, build: (g) => { grect(g, 6, 7, 8, 7); grect(g, 2, 6, 4, 9); grect(g, 14, 6, 3, 9); } },
     { color: BG, build: (g) => grect(g, 7, 8, 6, 5) },
-    { color: ACTION, build: (g) => { grect(g, 3, 8, 1, 1); grect(g, 16, 8, 1, 1); } },
+    { color: ACTION, build: (g) => { grect(g, 3, 8, 1, 1); grect(g, 15, 8, 1, 1); } },
   ]),
   // Squat box with a top cartridge slot.
   'console-retro': squareBody([
@@ -243,22 +246,29 @@ async function writeHero() {
   const h = rows * cellPx;
 
   const body = renderLayers(cols, rows, cellPx, [
-    // starry sky (small scattered dots, not isolated corner squares)
+    // starry sky: one row only, well clear (≥1 empty row) of the marquee below and
+    // ≥3 cells clear of every image edge — never touching a shape or the frame.
     {
       color: BRAND_STRONG,
       build: (g) => {
-        for (const [x, y] of [[2, 1], [5, 3], [9, 0], [13, 2], [18, 1], [22, 3], [26, 0], [31, 2], [35, 1], [39, 3], [42, 0]]) {
-          gset(g, x, y);
-        }
+        for (const x of [3, 8, 13, 18, 23, 28, 33, 38, 42]) gset(g, x, 1);
       },
     },
-    // ground line spanning the full width — grounds the scene instead of floating shapes
-    { color: BRAND_STRONG, build: (g) => grect(g, 0, 28, cols, 1) },
-    // arcade cabinet
-    { color: BRAND, build: (g) => { grect(g, 17, 4, 11, 19); grect(g, 17, 26, 11, 3); } },
-    { color: BRAND_STRONG, build: (g) => { grect(g, 17, 17, 11, 2); grect(g, 16, 23, 13, 2); } },
-    { color: BG, build: (g) => grect(g, 19, 7, 7, 8) },
-    { color: ACTION, build: (g) => { grect(g, 20, 14, 3, 1); grect(g, 21, 15, 1, 2); grect(g, 19, 27, 1, 1); grect(g, 25, 26, 1, 1); grect(g, 27, 27, 1, 1); } },
+    // gamepad: one connected shape (body + top notch), sitting on the ground next to the cabinet.
+    { color: BRAND, build: (g) => { grect(g, 5, 23, 8, 4); grect(g, 7, 22, 4, 1); } },
+    { color: BG, build: (g) => { grect(g, 7, 24, 1, 1); grect(g, 10, 24, 1, 1); grect(g, 11, 25, 1, 1); } },
+    // arcade cabinet: marquee, body, base flush against the body (no gap).
+    { color: ACTION, build: (g) => grect(g, 16, 3, 13, 2) },
+    { color: BRAND, build: (g) => grect(g, 17, 5, 11, 20) },
+    { color: BRAND_STRONG, build: (g) => grect(g, 16, 25, 13, 2) },
+    // screen, inset in the body, well above the control panel (no overlap with the joystick).
+    { color: BG, build: (g) => grect(g, 19, 7, 7, 7) },
+    // control panel BELOW the screen, with the joystick + 3 buttons drawn on top of it.
+    { color: BRAND_STRONG, build: (g) => grect(g, 17, 15, 11, 3) },
+    { color: ACTION, build: (g) => grect(g, 19, 16, 1, 1) },
+    { color: BG, build: (g) => { grect(g, 22, 16, 1, 1); grect(g, 24, 16, 1, 1); grect(g, 26, 16, 1, 1); } },
+    // ground line spanning the full width — grounds both shapes, flush under the cabinet base.
+    { color: BRAND_STRONG, build: (g) => grect(g, 0, 27, cols, 1) },
   ]);
 
   const svg = wrap(w, h, body);
