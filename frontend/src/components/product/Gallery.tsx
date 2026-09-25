@@ -32,7 +32,7 @@ export function Gallery({ images, name }: { images: ProductImage[]; name: string
               onClick={() => setActive(i)}
               className={`h-11 w-11 overflow-hidden rounded-card border ${i === active ? 'border-brand' : 'border-border'}`}
             >
-              <img src={im.src} alt="" width={44} height={44} loading="lazy" decoding="async" className="h-full w-full object-cover" />
+              <img src={im.src} alt="" width={44} height={44} decoding="async" className="h-full w-full object-cover" />
             </button>
           ))}
         </div>
