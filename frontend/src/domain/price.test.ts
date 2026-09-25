@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { formatPrice, savingsPercent, buildInstallments, priceSummary, buildCrediarioRows } from './price';
 
-const nbsp = (s: string) => s.replace(/ /g, ' ');
+const nbsp = (s: string) => s.replace(/\u00a0/g, ' ');
 const p = { precoAVista: 2999, precoParcelado: 3199.92, parcelasMax: 12 };
 
 describe('formatPrice', () => {

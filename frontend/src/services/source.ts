@@ -57,3 +57,6 @@ const lazyMockSource = Object.fromEntries(
 ) as unknown as DataSource;
 
 export const source: DataSource = import.meta.env.VITE_DATA_SOURCE === 'api' ? apiSource : lazyMockSource;
+
+/** Resolves once the source can answer without another round trip (mock mode: its chunk is in). */
+export const warmSource = (): Promise<unknown> => (source === apiSource ? Promise.resolve() : loadMock());

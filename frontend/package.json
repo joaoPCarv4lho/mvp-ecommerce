@@ -12,6 +12,8 @@
     "sitemap": "node scripts/gen-sitemap.mjs",
     "prerender": "node scripts/prerender.mjs",
     "check": "node scripts/check-acceptance.mjs",
+    "e2e": "node scripts/e2e.mjs",
+    "lighthouse": "node scripts/lighthouse.mjs",
     "build:full": "npm run images && npm run sitemap && npm run build && npm run prerender && npm run check"
   },
   "dependencies": {

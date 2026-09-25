@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { getProduct, getRelated } from '../services/products';
+import { productHandoffKey } from '../services/prefetch';
 import { useAsync } from '../hooks/useAsync';
 import { useSeo } from '../hooks/useSeo';
 import { useWhatsAppMessage } from '../hooks/useWhatsAppMessage';
@@ -41,7 +42,7 @@ export default function ProductPage() {
   const relatedRef = useRef<HTMLDivElement>(null);
   const [relatedVisible, setRelatedVisible] = useState(false);
 
-  const { data: product, loading } = useAsync(() => getProduct(slug), [slug]);
+  const { data: product, loading } = useAsync(() => getProduct(slug), [slug], productHandoffKey(slug));
   // Fetched only once the section scrolls into view: keeps it off the critical path and, as a side
   // effect, avoids any other product's badges ever entering this page before the user asks for them.
   const { data: related = [], loading: relatedLoading } = useAsync(

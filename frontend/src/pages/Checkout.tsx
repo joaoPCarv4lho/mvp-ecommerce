@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import type { Order, OrderInput } from '../domain/types';
 import type { CartItem } from '../store/cart';
@@ -68,6 +68,13 @@ export default function Checkout() {
   });
   useWhatsAppMessage(pageWhatsappText('Checkout'));
 
+  // Emptying the cart is an external-store update, which React flushes synchronously: doing it
+  // inside submit() would re-render with the cart already empty but `order` not yet committed,
+  // and the guard below would bounce the customer back to /carrinho instead of confirming.
+  useEffect(() => {
+    if (order) clear();
+  }, [order, clear]);
+
   if (items.length === 0 && !order) return <Navigate to="/carrinho" replace />;
 
   const quote = entrega.tipo === 'entrega' ? shippingQuote(entrega.cep) : null;
@@ -97,7 +104,6 @@ export default function Checkout() {
       setOrderItems(items);
       setOrder(created);
       setStep(STEP_CONFIRMACAO);
-      clear();
     } catch {
       // The form keeps every value so the customer only has to press the button again.
       setSubmitFailed(true);

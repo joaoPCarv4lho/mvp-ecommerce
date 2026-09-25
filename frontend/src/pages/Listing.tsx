@@ -27,9 +27,11 @@ export default function Listing() {
   const location = useLocation();
   const [drawerOpen, setDrawerOpen] = useState(false);
 
-  if (plataforma && !PLATAFORMAS.includes(plataforma as Plataforma)) return <NotFound />;
+  // Unknown platform or subcategory → 404, but only after every hook has run: this component
+  // stays mounted when the URL changes between two /:plataforma routes, so an early return above
+  // the hooks would change the hook count mid-life and crash the render.
   const subcat = sub ? SUBCATEGORIES.find((s) => s.slug === sub) : undefined;
-  if (sub && !subcat) return <NotFound />;
+  const notFound = (plataforma && !PLATAFORMAS.includes(plataforma as Plataforma)) || (sub && !subcat);
 
   const urlFilters = parseFilters(searchParams);
   const filters: ProductFilters = {
@@ -38,7 +40,7 @@ export default function Listing() {
     ...(subcat ? { tipo: subcat.tipo } : {}),
   };
 
-  const { data, loading } = useAsync(() => listProducts(filters), [JSON.stringify(filters)]);
+  const { data, loading } = useAsync(() => (notFound ? Promise.resolve({ items: [], total: 0 }) : listProducts(filters)), [JSON.stringify(filters), notFound]);
   const products = data?.items ?? [];
 
   const setFilters = (next: ProductFilters) => {
@@ -76,6 +78,8 @@ export default function Listing() {
     jsonLd: breadcrumbJsonLd(breadcrumbItems.map((i) => ({ label: i.label, to: i.to ?? location.pathname }))),
   });
   useWhatsAppMessage(pageWhatsappText(title));
+
+  if (notFound) return <NotFound />;
 
   const count = activeFilterCount(urlFilters);
   const filtersPanel = <Filters filters={filters} onChange={setFilters} showPlataforma={!plataforma} showTipo={!subcat} />;

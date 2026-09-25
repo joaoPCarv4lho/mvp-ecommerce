@@ -8,7 +8,7 @@ const notaBR = (n: number) => String(n).replace('.', ',');
 
 function Stars({ nota }: { nota: number }) {
   return (
-    <span aria-label={`Nota ${nota} de 5`} className="flex gap-1">
+    <span role="img" aria-label={`Nota ${nota} de 5`} className="flex gap-1">
       {Array.from({ length: 5 }, (_, i) => (
         <span key={i} aria-hidden="true" className={i < nota ? 'text-brand' : 'text-border'}>
           <PixelIcon name="star" size={16} />

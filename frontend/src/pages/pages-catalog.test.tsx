@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen, within, fireEvent, waitFor } from '@testing-library/react';
-import { MemoryRouter, Route, Routes } from 'react-router-dom';
+import { Link, MemoryRouter, Route, Routes } from 'react-router-dom';
 import Home from './Home';
 import Listing from './Listing';
 import Search from './Search';
@@ -43,6 +43,17 @@ describe('Listing', () => {
     await screen.findAllByRole('article');
     expect(screen.getByRole('button', { name: 'Filtrar' })).toBeInTheDocument();
     expect(screen.queryByRole('button', { name: /Filtrar \(/ })).toBeNull();
+  });
+  it('navigating from a valid platform to an unknown one renders 404 instead of crashing', async () => {
+    render(
+      <MemoryRouter initialEntries={['/playstation']}>
+        <Link to="/naoexiste">ir</Link>
+        <Routes><Route path="/:plataforma" element={<Listing />} /></Routes>
+      </MemoryRouter>,
+    );
+    await screen.findAllByRole('article');
+    fireEvent.click(screen.getByRole('link', { name: 'ir' }));
+    expect(await screen.findByText('Página não encontrada')).toBeInTheDocument();
   });
   it('clears the price inputs after "Limpar filtros"', async () => {
     at('/produtos?precoMin=999999999', <Listing />, '/produtos');
