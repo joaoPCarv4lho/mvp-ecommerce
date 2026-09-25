@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /carrinho
+Disallow: /checkout
+Disallow: /conta
+Disallow: /admin
+Allow: /
+
+Sitemap: https://www.mateusgames.com.br/sitemap.xml
