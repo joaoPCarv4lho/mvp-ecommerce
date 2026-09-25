@@ -25,7 +25,7 @@ describe('Listing', () => {
     expect(await screen.findByRole('heading', { level: 1, name: 'Usados & Seminovos' })).toBeInTheDocument();
     const cards = await screen.findAllByRole('article');
     expect(cards.length).toBeGreaterThan(0);
-    for (const c of cards) expect(within(c).getByText(/Usado/)).toBeInTheDocument();
+    for (const c of cards) expect(within(c).getAllByText(/Usado/).length).toBeGreaterThan(0);
     expect(document.body.textContent).not.toMatch(/Console revisado|descrição técnica/i);
   });
   it('platform page excludes gift cards', async () => {
