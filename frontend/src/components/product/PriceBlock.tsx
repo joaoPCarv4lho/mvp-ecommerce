@@ -27,6 +27,11 @@ function InstallmentTable({ caption, rows }: { caption: string; rows: Installmen
           </tr>
         ))}
       </tbody>
+      <tfoot>
+        <tr>
+          <td colSpan={3} className="pt-2 text-xs text-muted">Valores arredondados ao centavo.</td>
+        </tr>
+      </tfoot>
     </table>
   );
 }
@@ -45,7 +50,9 @@ export function PriceBlock({ product, compact = false }: { product: Product; com
         {s.economia > 0 ? <Badge tone="success">economize {s.economia}%</Badge> : null}
       </p>
       <p className="text-sm text-muted">
-        ou {formatPrice(s.totalCartao)} em até {s.parcelas}x de {formatPrice(s.valorParcela)} no cartão
+        {s.parcelas > 1
+          ? `ou ${formatPrice(s.totalCartao)} em até ${s.parcelas}x de ${formatPrice(s.valorParcela)} no cartão`
+          : `ou ${formatPrice(s.totalCartao)} no cartão`}
       </p>
       {compact ? null : (
         <>

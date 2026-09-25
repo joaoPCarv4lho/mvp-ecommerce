@@ -64,5 +64,7 @@ export function cartTotals(s: { items: CartItem[] }) {
     cartao += cents(i.valorGiftCard ?? i.precoParcelado) * i.quantidade;
     parcelas = Math.min(parcelas, i.parcelasMax);
   }
-  return { pix: pix / 100, cartao: cartao / 100, parcelas, valorParcela: Math.round(cartao / parcelas) / 100 };
+  // Card total is parcelas × valorParcela exactly (rounded to the cent), so the displayed numbers always agree.
+  const valorC = Math.round(cartao / parcelas);
+  return { pix: pix / 100, cartao: (valorC * parcelas) / 100, parcelas, valorParcela: valorC / 100 };
 }

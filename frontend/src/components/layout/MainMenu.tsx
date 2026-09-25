@@ -70,6 +70,7 @@ function DrawerMenu() {
 function InlineMenu() {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLLIElement>(null);
+  const btnRef = useRef<HTMLButtonElement>(null);
   const panelId = useId();
   const location = useLocation();
 
@@ -87,8 +88,14 @@ function InlineMenu() {
       <ul className="flex flex-wrap items-center gap-1">
         {MAIN_MENU.map((item) =>
           item.children ? (
-            <li key={item.label} ref={ref} className="relative" onKeyDown={(e) => { if (e.key === 'Escape') setOpen(false); }}>
-              <button type="button" aria-expanded={open} aria-controls={panelId} onClick={() => setOpen(!open)} className={itemCls}>
+            <li
+              key={item.label}
+              ref={ref}
+              className="relative"
+              onKeyDown={(e) => { if (e.key === 'Escape' && open) { setOpen(false); btnRef.current?.focus(); } }}
+              onBlur={(e) => { if (!ref.current?.contains(e.relatedTarget as Node | null)) setOpen(false); }}
+            >
+              <button ref={btnRef} type="button" aria-expanded={open} aria-controls={panelId} onClick={() => setOpen(!open)} className={itemCls}>
                 {item.label}
                 <Chevron open={open} />
               </button>

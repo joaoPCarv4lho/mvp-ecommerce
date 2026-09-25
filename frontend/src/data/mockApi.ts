@@ -34,11 +34,17 @@ export const mockSource: DataSource = {
   getFaq: async () => seed().faq,
   getActiveCampaigns: async () => seed().campaigns.filter((c) => isCampaignActive(c, new Date())),
   async createOrder(input) {
+    // Same rules as backend/app/schemas.py (Cliente, OrderInput) and main.py (unknown product).
+    const { nome, email, telefone } = input.cliente;
+    if (!input.itens.length) throw new Error('O carrinho está vazio.');
+    if (nome.trim().length < 2) throw new Error('Informe seu nome.');
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) throw new Error('Informe um e-mail válido.');
+    if (telefone.replace(/\D/g, '').length < 10) throw new Error('Informe um telefone com DDD.');
     const cartao = input.pagamento.metodo === 'cartao';
     let totalC = 0;
     for (const item of input.itens) {
       const p = byId(item.productId);
-      if (!p) throw new Error('Produto não encontrado');
+      if (!p) throw new Error(`Produto ${item.productId} não existe`);
       const unit = item.valorGiftCard ?? (cartao ? p.preco.precoParcelado : p.preco.precoAVista);
       totalC += Math.round(unit * 100) * item.quantidade;
     }

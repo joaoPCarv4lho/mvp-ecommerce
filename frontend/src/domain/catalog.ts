@@ -42,4 +42,8 @@ export function filtersToParams(f: ProductFilters): URLSearchParams {
   return p;
 }
 
-export const keyAttributes = (p: Product) => [...p.atributos, p.tipo === 'gift-card' ? null : conditionLabel(p.condicao)].filter(Boolean).join(' · ');
+export function keyAttributes(p: Product): string {
+  const cond = conditionLabel(p.condicao);
+  const hasCond = p.atributos.some((a) => a.toLowerCase() === cond.toLowerCase());
+  return [...p.atributos, p.tipo === 'gift-card' || hasCond ? null : cond].filter(Boolean).join(' · ');
+}

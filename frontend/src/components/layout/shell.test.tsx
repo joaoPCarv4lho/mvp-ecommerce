@@ -5,6 +5,7 @@ import Layout from './Layout';
 import { ProductCard } from '../product/ProductCard';
 import { PriceBlock } from '../product/PriceBlock';
 import { loadSeed } from '../../data/loadSeed';
+import { formatPrice } from '../../domain/price';
 
 const ps5 = loadSeed().products.find((p) => p.id === 'ps5-slim-1tb-usado')!;
 
@@ -35,4 +36,13 @@ it('price block labels each installment table', () => {
   expect(screen.getByRole('tab', { name: 'Crediário da loja', hidden: true })).toBeInTheDocument();
   const captions = Array.from(document.querySelectorAll('caption')).map((c) => c.textContent);
   expect(captions).toEqual(['Cartão de crédito', 'Crediário da loja']);
+});
+
+it('price block: rounding footnote, and no "1x" line for single-installment items', () => {
+  render(<PriceBlock product={ps5} />);
+  expect(screen.getAllByText('Valores arredondados ao centavo.', { exact: true }).length).toBeGreaterThan(0);
+  const gc = loadSeed().products.find((p) => p.tipo === 'gift-card')!;
+  const { container } = render(<PriceBlock product={{ ...gc, preco: { precoAVista: 50, precoParcelado: 50, parcelasMax: 1 } }} compact />);
+  expect(container.textContent).toContain(`ou ${formatPrice(50)} no cartão`);
+  expect(container.textContent).not.toContain('1x de');
 });

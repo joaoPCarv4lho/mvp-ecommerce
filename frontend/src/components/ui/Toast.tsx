@@ -27,8 +27,9 @@ export const toast = (message: string) => useToast.getState().push(message);
 
 export function ToastRegion() {
   const messages = useToast((s) => s.messages);
+  // Bottom-left on mobile (clear of the WhatsApp button on the right), bottom-center on desktop.
   return (
-    <div aria-live="polite" className="fixed bottom-4 right-4 z-50 flex flex-col gap-2">
+    <div aria-live="polite" className="fixed bottom-4 left-4 right-[88px] z-50 flex flex-col items-start gap-2 lg:bottom-6 lg:left-1/2 lg:right-auto lg:-translate-x-1/2 lg:items-center">
       {messages.map((m) => (
         <div key={m.id} className="rounded-card bg-brand px-4 py-2 text-white shadow-card">
           {m.text}

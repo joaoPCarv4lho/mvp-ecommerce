@@ -20,7 +20,7 @@ export function Header() {
     {/* Focus ring switches to white on the purple bar so it stays visible. */}
     <header className="bg-brand text-white [&_:focus-visible]:outline-white">
       <div className="mx-auto flex max-w-[1200px] flex-wrap items-center gap-1 px-4 py-2 sm:gap-2 lg:gap-4">
-        <button type="button" onClick={() => setMenuOpen(true)} className={`${iconLink} lg:hidden`} aria-haspopup="dialog">
+        <button type="button" onClick={() => setMenuOpen(true)} className={`${iconLink} lg:hidden`} aria-haspopup="dialog" aria-expanded={menuOpen}>
           <PixelIcon name="menu" size={24} />
           <span className="sr-only">Menu</span>
         </button>
@@ -55,7 +55,10 @@ export function Header() {
       </div>
     </header>
     <Drawer open={menuOpen} onClose={() => setMenuOpen(false)} title="Menu" side="left">
-      <MainMenu layout="drawer" />
+      {/* Any link click closes the drawer, even when it points to the current URL (no location change). */}
+      <div onClick={(e) => { if ((e.target as Element).closest('a')) setMenuOpen(false); }}>
+        <MainMenu layout="drawer" />
+      </div>
     </Drawer>
     </>
   );

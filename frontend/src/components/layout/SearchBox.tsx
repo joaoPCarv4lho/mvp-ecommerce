@@ -15,6 +15,7 @@ export function SearchBox() {
   const [items, setItems] = useState<Suggestion[]>([]);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(-1);
+  const [resultFor, setResultFor] = useState(''); // term the current `items` answer
   const latest = useRef('');
 
   useEffect(() => {
@@ -25,14 +26,18 @@ export function SearchBox() {
       suggestProducts(term).then((r) => {
         if (latest.current !== term) return; // stale response
         setItems(r);
+        setResultFor(term);
         setActive(-1);
       }, () => setItems([]));
     }, 150);
     return () => clearTimeout(t);
   }, [q]);
 
-  // Close the list whenever the route changes.
-  useEffect(() => { setOpen(false); }, [location.pathname, location.search]);
+  // Close the list whenever the route changes; on /busca keep the input in sync with ?q=.
+  useEffect(() => {
+    setOpen(false);
+    if (location.pathname === '/busca') setQ(new URLSearchParams(location.search).get('q') ?? '');
+  }, [location.pathname, location.search]);
 
   const expanded = open && items.length > 0;
 
@@ -87,6 +92,9 @@ export function SearchBox() {
       <button type="submit" aria-label="Buscar" className="absolute right-0 top-0 inline-flex h-11 w-11 items-center justify-center rounded-card text-brand">
         <PixelIcon name="search" size={20} />
       </button>
+      <p className="sr-only" aria-live="polite">
+        {open && q.trim().length >= 2 && resultFor === q.trim() ? `${items.length} ${items.length === 1 ? 'sugestão' : 'sugestões'}` : ''}
+      </p>
       <ul
         id={listId}
         role="listbox"

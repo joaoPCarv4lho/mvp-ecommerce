@@ -34,4 +34,5 @@ describe('URL round-trip', () => {
 
 describe('keyAttributes', () => {
   it('joins attributes with condition', () => expect(keyAttributes(mk({ atributos: ['1TB', 'Com leitor'], condicao: 'usado' }))).toBe('1TB · Com leitor · Usado'));
+  it('does not repeat a condition already in atributos', () => expect(keyAttributes(mk({ atributos: ['2TB', 'lacrado'], condicao: 'lacrado' }))).toBe('2TB · lacrado'));
 });

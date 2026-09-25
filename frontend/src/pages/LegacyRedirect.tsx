@@ -1,13 +1,17 @@
 import { Navigate, useLocation } from 'react-router-dom';
 import { slugify } from '../domain/slug';
 
-// Old OpenCart category words → new platform route.
-const CATEGORY: [RegExp, string][] = [
+// Platform word in an old OpenCart route → new platform route (first match wins).
+const PLATFORM: [RegExp, string][] = [
   [/^(playstation|ps[1-5]?)$/, '/playstation'],
   [/^xbox$/, '/xbox'],
-  [/^(nintendo|switch|wii|3ds)$/, '/nintendo'],
+  [/^(nintendo|switch|wii|3ds|snes)$/, '/nintendo'],
   [/^(retro|classicos?)$/, '/retro'],
 ];
+// Words that appear in category routes. A route made only of these (plus platform words) is a category, not a product.
+const CATEGORY_WORDS = /^(jogos?|games?|consoles?|acessorios|controles?|headsets?|usados?|seminovos?|novos?|lacrados?|categoria|series|one|360|super|x|s|u|e|de|[1-5])$/;
+
+const platformOf = (t: string) => PLATFORM.find(([re]) => re.test(t))?.[1];
 
 /** Maps `index.php?_route_=…` (legacy OpenCart) to the friendly URL. The server does the real 301 (deploy/nginx). */
 export function legacyTarget(search: string): string {
@@ -19,13 +23,15 @@ export function legacyTarget(search: string): string {
   const segments = path.split('/').map(slugify).filter(Boolean);
   if (!segments.length) return '/';
   const last = segments[segments.length - 1];
-  // A single short segment ("playstation-4", "xbox") is a category; anything longer is a product slug.
-  const tokens = last.split('-');
-  if (segments.length === 1 && tokens.length <= 2) {
-    const hit = CATEGORY.find(([re]) => re.test(tokens[0]));
-    if (hit) return hit[1];
+  const tokens = segments.flatMap((s) => s.split('-'));
+  const isCategory = tokens.every((t) => platformOf(t) || CATEGORY_WORDS.test(t));
+  // Product slugs are long and carry model words ("playstation-5-slim-1tb-usado").
+  if (!isCategory && last.split('-').length >= 3) return `/produto/${last}`;
+  for (const t of tokens) {
+    const hit = platformOf(t);
+    if (hit) return hit;
   }
-  return `/produto/${last}`;
+  return '/';
 }
 
 export default function LegacyRedirect() {

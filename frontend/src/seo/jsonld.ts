@@ -2,6 +2,7 @@ import type { FaqItem, Product } from '../domain/types';
 import { storeConfig } from '../config/storeConfig';
 import { buildProductName } from '../domain/productName';
 import { isPreOrderActive } from '../domain/preorder';
+import { addDays, toISODate } from '../domain/dates';
 
 const S = 'https://schema.org/';
 const abs = (path: string) => (path.startsWith('http') ? path : storeConfig.siteUrl + path);
@@ -21,24 +22,37 @@ export function storeJsonLd(): object {
     geo: { '@type': 'GeoCoordinates', latitude: geo.lat, longitude: geo.lng },
     openingHours: storeConfig.horario.map((h) => h.schema),
     sameAs: Object.values(storeConfig.redes),
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: storeConfig.avaliacaoGoogle.nota, reviewCount: storeConfig.avaliacaoGoogle.total },
   };
 }
 
-export function productJsonLd(p: Product, url: string): object {
-  const availability = isPreOrderActive(p, new Date()) ? 'PreOrder' : p.estoque > 0 ? 'InStock' : 'OutOfStock';
+const MANUFACTURERS: [RegExp, string][] = [
+  [/^playstation/i, 'Sony'],
+  [/^xbox/i, 'Microsoft'],
+  [/^(super )?nintendo|^wii|3ds/i, 'Nintendo'],
+];
+
+/** Console maker for the product family; undefined for stores/others (Steam, Roblox...). */
+export const manufacturer = (familia: string) => MANUFACTURERS.find(([re]) => re.test(familia))?.[1];
+
+export function productJsonLd(p: Product, url: string, hoje = new Date()): object {
+  const preOrder = isPreOrderActive(p, hoje);
+  const availability = preOrder ? 'PreOrder' : p.estoque > 0 ? 'InStock' : 'OutOfStock';
+  const brand = manufacturer(p.familia);
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: buildProductName(p),
     sku: p.id,
+    description: p.descricaoTecnica,
     image: p.imagens.map((i) => abs(i.src)),
-    brand: { '@type': 'Brand', name: p.familia },
+    ...(brand ? { brand: { '@type': 'Brand', name: brand } } : {}),
     offers: {
       '@type': 'Offer',
       url,
       priceCurrency: 'BRL',
       price: p.preco.precoAVista,
+      priceValidUntil: addDays(toISODate(hoje), 30),
+      ...(preOrder && p.dataLancamento ? { availabilityStarts: p.dataLancamento.slice(0, 10) } : {}),
       availability: S + availability,
       itemCondition: S + (p.condicao === 'usado' ? 'UsedCondition' : 'NewCondition'),
       seller: { '@type': 'Organization', name: storeConfig.nome },

@@ -25,4 +25,11 @@ describe('cart', () => {
     useCart.getState().add(p); useCart.getState().setQty('a', 0);
     expect(useCart.getState().items).toEqual([]);
   });
+  it('mixed cart: parcelas × valorParcela equals the card total', () => {
+    const q = { ...p, id: 'b', slug: 'b', preco: { precoAVista: 449, precoParcelado: 480.5, parcelasMax: 10 } } as Product;
+    useCart.getState().add(p); useCart.getState().add(q);
+    const t = cartTotals(useCart.getState());
+    expect(t.parcelas).toBe(10);
+    expect(Math.round(t.valorParcela * 100) * t.parcelas).toBe(Math.round(t.cartao * 100));
+  });
 });
