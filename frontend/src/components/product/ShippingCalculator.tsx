@@ -1,14 +1,9 @@
 import { useId, useState } from 'react';
 import type { FormEvent } from 'react';
-import { shippingQuote } from '../../domain/shipping';
+import { maskCep, shippingQuote } from '../../domain/shipping';
 import { formatPrice } from '../../domain/price';
 import { storeConfig } from '../../config/storeConfig';
 import { Button, Input } from '../ui';
-
-const maskCep = (v: string) => {
-  const digits = v.replace(/\D/g, '').slice(0, 8);
-  return digits.length > 5 ? `${digits.slice(0, 5)}-${digits.slice(5)}` : digits;
-};
 
 /** Mock shipping quote (§7.6) plus the always-available free pickup option. */
 export function ShippingCalculator() {
