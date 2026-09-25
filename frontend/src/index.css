@@ -1,0 +1,12 @@
+@import '@fontsource/space-grotesk/400.css';
+@import '@fontsource/space-grotesk/700.css';
+@import './styles/tokens.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { font-family: var(--font-sans); color: var(--color-text); background: var(--color-bg); }
+  body { overflow-x: hidden; }
+  :focus-visible { outline: 3px solid var(--color-brand); outline-offset: 2px; }
+}

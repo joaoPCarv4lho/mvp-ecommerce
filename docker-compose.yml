@@ -1,0 +1,12 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: mateus
+      POSTGRES_PASSWORD: mateus
+      POSTGRES_DB: mateusgames
+    ports: ["5432:5432"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mateus"]
+      interval: 2s
+      retries: 15

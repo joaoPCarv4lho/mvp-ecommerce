@@ -1,0 +1,9 @@
+{
+  "name": "mateus-games-mvp",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "test": "npm --prefix frontend test",
+    "db:up": "docker compose up -d --wait db"
+  }
+}
