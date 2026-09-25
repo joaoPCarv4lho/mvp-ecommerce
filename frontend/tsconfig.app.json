@@ -15,6 +15,7 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "types": ["vitest/globals"],
+    "resolveJsonModule": true,
 
     /* Linting */
     "strict": true,
@@ -23,5 +24,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"]
+  "include": ["src", "../seed/*.json"]
 }
