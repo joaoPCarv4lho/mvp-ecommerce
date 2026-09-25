@@ -1,15 +1,14 @@
 import { Link } from 'react-router-dom';
 import { useAsync } from '../../hooks/useAsync';
 import { listProducts } from '../../services/products';
-import { MAIN_MENU, PLATAFORMAS } from '../layout/menu';
+import { PLATAFORMAS } from '../layout/menu';
 import { ProductGrid } from '../product/ProductGrid';
-
-const PLATFORM_LABEL = Object.fromEntries(MAIN_MENU.filter((m) => m.plataforma).map((m) => [m.plataforma, m.label]));
+import { platformLabel } from '../product/Filters';
 
 function PlatformSection({ plataforma }: { plataforma: (typeof PLATAFORMAS)[number] }) {
   const { data, loading } = useAsync(() => listProducts({ plataforma, sort: 'relevancia' }), [plataforma]);
   const items = data?.items.slice(0, 4) ?? [];
-  const label = PLATFORM_LABEL[plataforma];
+  const label = platformLabel(plataforma);
 
   return (
     <div>

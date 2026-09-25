@@ -29,7 +29,10 @@ export function Hero() {
             width={800}
             height={500}
             alt="Vitrine da loja Mateus Games com consoles e jogos em destaque"
-            fetchPriority="high"
+            // Lowercase (not React's camelCase fetchPriority) so React 18 passes it through as a plain
+            // DOM attribute instead of warning "does not recognize the fetchPriority prop".
+            // @ts-expect-error fetchpriority is valid HTML but missing from React 18's DOM typings.
+            fetchpriority="high"
             decoding="async"
             className="h-full w-full object-cover"
           />

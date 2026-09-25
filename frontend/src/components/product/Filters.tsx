@@ -1,6 +1,9 @@
+import { useEffect, useState } from 'react';
 import type { Condicao, Plataforma, ProductFilters, Tipo } from '../../domain/types';
 import { Input, RadioCard, Select } from '../ui';
 import { MAIN_MENU } from '../layout/menu';
+
+export const platformLabel = (p: Plataforma): string => MAIN_MENU.find((m) => m.plataforma === p)?.label ?? p;
 
 const CONDICOES: { value: Condicao; label: string }[] = [
   { value: 'novo', label: 'Novo' },
@@ -27,12 +30,22 @@ export function Filters({
   filters,
   onChange,
   showPlataforma = true,
+  showTipo = true,
 }: {
   filters: ProductFilters;
   onChange: (next: ProductFilters) => void;
   showPlataforma?: boolean;
+  showTipo?: boolean;
 }) {
   const patch = (next: Partial<ProductFilters>) => onChange({ ...filters, ...next });
+
+  // Controlled local buffers so the fields reflect `filters` after external resets (e.g. "Limpar filtros")
+  // instead of going stale like an uncontrolled defaultValue would.
+  const [minVal, setMinVal] = useState(filters.precoMin != null ? String(filters.precoMin) : '');
+  const [maxVal, setMaxVal] = useState(filters.precoMax != null ? String(filters.precoMax) : '');
+  useEffect(() => setMinVal(filters.precoMin != null ? String(filters.precoMin) : ''), [filters.precoMin]);
+  useEffect(() => setMaxVal(filters.precoMax != null ? String(filters.precoMax) : ''), [filters.precoMax]);
+  const commitPrice = () => patch({ precoMin: minVal ? Number(minVal) : undefined, precoMax: maxVal ? Number(maxVal) : undefined });
 
   return (
     <div className="flex flex-col gap-6">
@@ -71,7 +84,13 @@ export function Filters({
 
       <fieldset className="flex flex-col gap-2">
         <legend className="mb-1 font-bold">Faixa de preço</legend>
-        <div className="flex gap-2">
+        <form
+          className="flex gap-2"
+          onSubmit={(e) => {
+            e.preventDefault();
+            commitPrice();
+          }}
+        >
           <div className="min-w-0 flex-1">
             <Input
               id="filtro-preco-min"
@@ -80,8 +99,9 @@ export function Filters({
               inputMode="numeric"
               min={0}
               className="w-full"
-              defaultValue={filters.precoMin ?? ''}
-              onBlur={(e) => patch({ precoMin: e.target.value ? Number(e.target.value) : undefined })}
+              value={minVal}
+              onChange={(e) => setMinVal(e.target.value)}
+              onBlur={commitPrice}
             />
           </div>
           <div className="min-w-0 flex-1">
@@ -92,11 +112,12 @@ export function Filters({
               inputMode="numeric"
               min={0}
               className="w-full"
-              defaultValue={filters.precoMax ?? ''}
-              onBlur={(e) => patch({ precoMax: e.target.value ? Number(e.target.value) : undefined })}
+              value={maxVal}
+              onChange={(e) => setMaxVal(e.target.value)}
+              onBlur={commitPrice}
             />
           </div>
-        </div>
+        </form>
       </fieldset>
 
       <fieldset className="flex flex-col gap-2">
@@ -126,13 +147,15 @@ export function Filters({
         </div>
       </fieldset>
 
-      <Select
-        id="filtro-tipo"
-        label="Tipo"
-        value={filters.tipo ?? ''}
-        onChange={(e) => patch({ tipo: (e.target.value || undefined) as Tipo | undefined })}
-        options={[{ value: '', label: 'Todos os tipos' }, ...TIPO_OPTIONS]}
-      />
+      {showTipo ? (
+        <Select
+          id="filtro-tipo"
+          label="Tipo"
+          value={filters.tipo ?? ''}
+          onChange={(e) => patch({ tipo: (e.target.value || undefined) as Tipo | undefined })}
+          options={[{ value: '', label: 'Todos os tipos' }, ...TIPO_OPTIONS]}
+        />
+      ) : null}
     </div>
   );
 }

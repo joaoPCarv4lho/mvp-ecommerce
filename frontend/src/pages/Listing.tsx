@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useLocation, useParams, useSearchParams } from 'react-router-dom';
-import { PLATAFORMAS, SUBCATEGORIES, MAIN_MENU } from '../components/layout/menu';
+import { PLATAFORMAS, SUBCATEGORIES } from '../components/layout/menu';
 import type { Plataforma, ProductFilters, SortKey } from '../domain/types';
 import { parseFilters, filtersToParams } from '../domain/catalog';
 import { useAsync } from '../hooks/useAsync';
@@ -10,11 +10,9 @@ import { pageWhatsappText } from '../domain/whatsapp';
 import { breadcrumbJsonLd } from '../seo/jsonld';
 import { listProducts } from '../services/products';
 import { ProductGrid } from '../components/product/ProductGrid';
-import { Filters, activeFilterCount } from '../components/product/Filters';
+import { Filters, activeFilterCount, platformLabel } from '../components/product/Filters';
 import { Breadcrumb, Button, Drawer, EmptyState, Select } from '../components/ui';
 import NotFound from './NotFound';
-
-const platformLabel = (p: Plataforma) => MAIN_MENU.find((m) => m.plataforma === p)?.label ?? p;
 
 const SORT_OPTIONS: { value: SortKey; label: string }[] = [
   { value: 'relevancia', label: 'Relevância' },
@@ -33,8 +31,9 @@ export default function Listing() {
   const subcat = sub ? SUBCATEGORIES.find((s) => s.slug === sub) : undefined;
   if (sub && !subcat) return <NotFound />;
 
+  const urlFilters = parseFilters(searchParams);
   const filters: ProductFilters = {
-    ...parseFilters(searchParams),
+    ...urlFilters,
     ...(plataforma ? { plataforma: plataforma as Plataforma } : {}),
     ...(subcat ? { tipo: subcat.tipo } : {}),
   };
@@ -78,8 +77,8 @@ export default function Listing() {
   });
   useWhatsAppMessage(pageWhatsappText(title));
 
-  const count = activeFilterCount(filters);
-  const filtersPanel = <Filters filters={filters} onChange={setFilters} showPlataforma={!plataforma} />;
+  const count = activeFilterCount(urlFilters);
+  const filtersPanel = <Filters filters={filters} onChange={setFilters} showPlataforma={!plataforma} showTipo={!subcat} />;
 
   return (
     <div className="mx-auto max-w-[1200px] px-4 py-6">

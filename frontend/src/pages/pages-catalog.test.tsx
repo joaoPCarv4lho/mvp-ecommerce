@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { render, screen, within } from '@testing-library/react';
+import { render, screen, within, fireEvent, waitFor } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import Home from './Home';
 import Listing from './Listing';
@@ -32,6 +32,26 @@ describe('Listing', () => {
     at('/playstation', <Listing />, '/:plataforma');
     await screen.findAllByRole('article');
     expect(screen.queryByText(/Gift Card/)).toBeNull();
+  });
+  it('hides the Tipo select when a subcategory is forced by the route', async () => {
+    at('/playstation/consoles', <Listing />, '/:plataforma/:sub');
+    await screen.findAllByRole('article');
+    expect(screen.queryByLabelText('Tipo')).toBeNull();
+  });
+  it('filter badge counts only user-editable URL filters, not the route-implied plataforma/tipo', async () => {
+    at('/playstation/consoles', <Listing />, '/:plataforma/:sub');
+    await screen.findAllByRole('article');
+    expect(screen.getByRole('button', { name: 'Filtrar' })).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /Filtrar \(/ })).toBeNull();
+  });
+  it('clears the price inputs after "Limpar filtros"', async () => {
+    at('/produtos?precoMin=999999999', <Listing />, '/produtos');
+    const before = await screen.findAllByLabelText('Mín');
+    for (const el of before) expect(el).toHaveValue(999999999);
+    fireEvent.click(await screen.findByRole('button', { name: 'Limpar filtros' }));
+    await waitFor(() => {
+      for (const el of screen.getAllByLabelText('Mín')) expect(el).toHaveValue(null);
+    });
   });
 });
 

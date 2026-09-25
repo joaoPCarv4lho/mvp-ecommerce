@@ -1,8 +1,9 @@
 import { Link, useSearchParams } from 'react-router-dom';
 import { useAsync } from '../hooks/useAsync';
 import { useSeo } from '../hooks/useSeo';
+import { useWhatsAppMessage } from '../hooks/useWhatsAppMessage';
 import { listProducts } from '../services/products';
-import { whatsappLink } from '../domain/whatsapp';
+import { pageWhatsappText, whatsappLink } from '../domain/whatsapp';
 import { ProductGrid } from '../components/product/ProductGrid';
 import { EmptyState } from '../components/ui';
 
@@ -20,6 +21,7 @@ export default function Search() {
   const products = data?.items ?? [];
 
   useSeo({ title: `Resultados para "${q}" | Mateus Games`, description: `Resultados da busca por "${q}" na Mateus Games.`, path: '/busca', noindex: true });
+  useWhatsAppMessage(pageWhatsappText('Busca'));
 
   return (
     <div className="mx-auto max-w-[1200px] px-4 py-6">
