@@ -11,7 +11,7 @@ export function Accordion({ items, defaultOpen }: { items: AccordionItem[]; defa
     <div className="divide-y divide-border">
       {items.map((item) => (
         <details key={item.id} open={item.id === defaultOpen} className="group py-4">
-          <summary className="flex min-h-11 list-none items-center justify-between gap-2 font-bold [&::-webkit-details-marker]:hidden">
+          <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-2 font-bold [&::-webkit-details-marker]:hidden">
             <span>{item.title}</span>
             <span aria-hidden="true" className="inline-block transition-transform duration-150 group-open:rotate-45">
               +
