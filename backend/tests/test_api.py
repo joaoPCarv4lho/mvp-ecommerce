@@ -66,3 +66,31 @@ async def test_create_product_validation(client):
            "preco": {"precoAVista": 1, "precoParcelado": 1.2, "parcelasMax": 12}, "plataforma": "playstation"}
     r = await client.post("/api/products", json=bad)
     assert r.status_code == 422
+
+
+async def test_create_product_invalid_condicao_returns_422_not_500(client):
+    bad = {"plataforma": "playstation", "familia": "PlayStation 5", "modelo": "Pro", "tipo": "console",
+           "condicao": "reformado", "preco": {"precoAVista": 100, "precoParcelado": 100, "parcelasMax": 1}}
+    r = await client.post("/api/products", json=bad)
+    assert r.status_code == 422
+
+
+async def test_create_product_missing_preco_returns_422(client):
+    bad = {"plataforma": "playstation", "familia": "PlayStation 5", "modelo": "Pro", "tipo": "console", "condicao": "novo"}
+    r = await client.post("/api/products", json=bad)
+    assert r.status_code == 422
+
+
+async def test_create_product_valid_used_returns_201_and_is_gettable(client):
+    body = {
+        "plataforma": "playstation", "familia": "PlayStation 5", "modelo": "Slim", "capacidade": "1TB",
+        "condicao": "usado", "tipo": "console",
+        "preco": {"precoAVista": 2999, "precoParcelado": 3199.92, "parcelasMax": 12},
+        "usado": {"estado": "excelente", "acompanha": {"console": True, "controles": 1, "cabos": True, "caixa": False, "jogo": False},
+                  "revisadoEm": "2026-09-20", "fotosReais": []},
+    }
+    r = await client.post("/api/products", json=body)
+    assert r.status_code == 201
+    slug = r.json()["slug"]
+    g = await client.get(f"/api/products/{slug}")
+    assert g.status_code == 200 and g.json()["slug"] == slug

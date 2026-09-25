@@ -1,6 +1,7 @@
 from app.validation import validate_product_input, slugify
 
 VALID = {
+    "plataforma": "playstation",
     "familia": "PlayStation 5", "modelo": "Slim", "capacidade": "1TB", "condicao": "usado", "tipo": "console",
     "preco": {"precoAVista": 2999, "precoParcelado": 3199.92, "parcelasMax": 12},
     "usado": {"estado": "excelente", "acompanha": {"console": True, "controles": 1, "cabos": True, "caixa": False, "jogo": False}, "revisadoEm": "2026-09-20", "fotosReais": []},
@@ -23,3 +24,23 @@ def test_used_requires_estado_and_acompanha():
 def test_slugify_spec_example():
     assert slugify("PlayStation 5 Slim 1TB com Leitor (Usado)") == "playstation-5-slim-1tb-com-leitor-usado"
     assert "--" not in slugify("a -- b") and not slugify("x!").endswith("-")
+
+
+def test_invalid_condicao_rejected():
+    errs = validate_product_input({**VALID, "condicao": "reformado"})
+    assert any("Condição" in e for e in errs)
+
+
+def test_invalid_tipo_rejected():
+    errs = validate_product_input({**VALID, "tipo": "brinquedo"})
+    assert any("Tipo" in e for e in errs)
+
+
+def test_invalid_plataforma_rejected():
+    errs = validate_product_input({**VALID, "plataforma": "sega"})
+    assert any("Plataforma" in e for e in errs)
+
+
+def test_missing_preco_rejected():
+    errs = validate_product_input({k: v for k, v in VALID.items() if k != "preco"})
+    assert any("Preço" in e for e in errs)

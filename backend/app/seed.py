@@ -1,4 +1,5 @@
 import json
+import os
 import re
 from datetime import date, timedelta
 from pathlib import Path
@@ -7,7 +8,8 @@ from .models import ContentRow, ProductRow
 from .search import normalize_search
 from .validation import build_product_name, slugify, unique_slug
 
-SEED_DIR = Path(__file__).resolve().parents[2] / "seed"
+# Docker (backend/Dockerfile) sets SEED_DIR explicitly; local dev/tests fall back to the repo-relative default.
+SEED_DIR = Path(os.environ.get("SEED_DIR") or (Path(__file__).resolve().parents[2] / "seed"))
 DATE_FIELDS = {"garantiaAte", "dataLancamento", "criadoEm", "revisadoEm", "inicio", "fim", "data"}
 _REL = re.compile(r"^([+-])(\d+)d$")
 

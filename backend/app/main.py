@@ -67,7 +67,8 @@ async def suggest(q: str = "", s=Depends(session)):
     if len(normalize_search(q)) < 2:
         return []
     items = await list_products(s, q=q, sort="relevancia", limit=6)
-    return [{"slug": p["slug"], "nome": build_product_name(p), "preco": p["preco"]["precoAVista"], "imagem": p["imagens"][0]} for p in items]
+    return [{"slug": p["slug"], "nome": build_product_name(p), "preco": p["preco"]["precoAVista"],
+             "imagem": p["imagens"][0] if p.get("imagens") else None} for p in items]
 
 
 @app.get("/api/services")
