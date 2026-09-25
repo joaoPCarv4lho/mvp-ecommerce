@@ -10,7 +10,8 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
 export function Input({ label, error, hint, id, className = '', ...props }: InputProps) {
   const errorId = `${id}-error`;
   const hintId = `${id}-hint`;
-  const describedBy = [error ? errorId : null, hint ? hintId : null].filter(Boolean).join(' ') || undefined;
+  const showHint = Boolean(hint) && !error;
+  const describedBy = [error ? errorId : null, showHint ? hintId : null].filter(Boolean).join(' ') || undefined;
   return (
     <div className="flex flex-col gap-1">
       <label htmlFor={id} className="text-sm font-bold">
@@ -20,10 +21,10 @@ export function Input({ label, error, hint, id, className = '', ...props }: Inpu
         id={id}
         aria-invalid={error ? true : undefined}
         aria-describedby={describedBy}
-        className={`min-h-11 rounded-card border px-3 text-base ${error ? 'border-error' : 'border-border'} ${className}`.trim()}
+        className={`min-h-11 rounded-card border px-4 text-base ${error ? 'border-error' : 'border-border'} ${className}`.trim()}
         {...props}
       />
-      {hint && !error ? (
+      {showHint ? (
         <p id={hintId} className="text-sm text-muted">
           {hint}
         </p>

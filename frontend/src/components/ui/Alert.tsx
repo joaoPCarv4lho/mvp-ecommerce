@@ -18,7 +18,7 @@ export function Alert({ tone, title, children }: { tone: AlertTone; title?: stri
       <PixelIcon name={icon} size={20} />
       <div>
         {title ? <p className="font-bold">{title}</p> : null}
-        <p>{children}</p>
+        <div>{children}</div>
       </div>
     </div>
   );

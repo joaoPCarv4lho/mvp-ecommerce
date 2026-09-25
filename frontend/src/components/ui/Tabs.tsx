@@ -13,11 +13,17 @@ export function Tabs({ tabs }: { tabs: TabItem[] }) {
   const buttonRefs = useRef<Record<string, HTMLButtonElement | null>>({});
 
   const onKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
-    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+    if (!['ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(e.key)) return;
     e.preventDefault();
     const activeIndex = tabs.findIndex((t) => t.id === active);
-    const dir = e.key === 'ArrowRight' ? 1 : -1;
-    const next = tabs[(activeIndex + dir + tabs.length) % tabs.length];
+    let nextIndex: number;
+    if (e.key === 'Home') nextIndex = 0;
+    else if (e.key === 'End') nextIndex = tabs.length - 1;
+    else {
+      const dir = e.key === 'ArrowRight' ? 1 : -1;
+      nextIndex = (activeIndex + dir + tabs.length) % tabs.length;
+    }
+    const next = tabs[nextIndex];
     setActive(next.id);
     buttonRefs.current[next.id]?.focus();
   };

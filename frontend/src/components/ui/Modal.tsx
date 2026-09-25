@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useId, useRef } from 'react';
 import type { ReactNode } from 'react';
 import { PixelIcon } from './PixelIcon';
 
@@ -9,10 +9,9 @@ export interface ModalProps {
   children: ReactNode;
 }
 
-const slugId = (prefix: string, title: string) => `${prefix}-${title.trim().toLowerCase().replace(/\s+/g, '-')}`;
-
 export function Modal({ open, onClose, title, children }: ModalProps) {
   const ref = useRef<HTMLDialogElement>(null);
+  const titleId = useId();
 
   useEffect(() => {
     const el = ref.current;
@@ -29,8 +28,6 @@ export function Modal({ open, onClose, title, children }: ModalProps) {
     return () => el.removeEventListener('close', handleClose);
   }, [onClose]);
 
-  const titleId = slugId('modal-title', title);
-
   return (
     <dialog ref={ref} aria-labelledby={titleId} className="w-full max-w-lg rounded-card p-6 shadow-card">
       <div className="mb-4 flex items-center justify-between">
@@ -40,7 +37,7 @@ export function Modal({ open, onClose, title, children }: ModalProps) {
         <button
           type="button"
           aria-label="Fechar"
-          onClick={onClose}
+          onClick={() => ref.current?.close()}
           className="inline-flex min-h-11 min-w-11 items-center justify-center"
         >
           <PixelIcon name="close" size={20} />

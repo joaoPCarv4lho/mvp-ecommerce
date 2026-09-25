@@ -13,7 +13,7 @@ export interface RadioCardProps {
 export function RadioCard({ name, value, checked, onChange, title, description, children }: RadioCardProps) {
   return (
     <label
-      className={`flex min-h-11 cursor-pointer items-start gap-3 rounded-card border p-4 ${
+      className={`flex min-h-11 cursor-pointer items-start gap-2 rounded-card border p-4 has-[:focus-visible]:outline has-[:focus-visible]:outline-[3px] has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-brand ${
         checked ? 'border-brand bg-brand-soft' : 'border-border'
       }`}
     >

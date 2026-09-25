@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Accordion, Alert, Breadcrumb, Button, Input, Stepper, Tabs } from '.';
+import { Accordion, Alert, Breadcrumb, Button, Input, RadioCard, Stepper, Tabs } from '.';
 import { MemoryRouter } from 'react-router-dom';
 
 describe('ui', () => {
@@ -33,6 +33,11 @@ describe('ui', () => {
   it('Breadcrumb renders nav landmark', () => {
     render(<MemoryRouter><Breadcrumb items={[{ label: 'Início', to: '/' }, { label: 'Xbox' }]} /></MemoryRouter>);
     expect(screen.getByRole('navigation', { name: 'Trilha de navegação' })).toBeInTheDocument();
+  });
+  it('RadioCard label exposes a focus-visible outline hook', () => {
+    render(<RadioCard name="pagamento" value="pix" checked={false} onChange={() => {}} title="Pix" />);
+    const label = screen.getByText('Pix').closest('label');
+    expect(label?.className).toMatch(/has-\[:focus-visible\]:outline/);
   });
   it('Tabs switch with arrow keys', async () => {
     render(<Tabs tabs={[{ id: 'a', label: 'Cartão', content: 'A' }, { id: 'b', label: 'Crediário', content: 'B' }]} />);
